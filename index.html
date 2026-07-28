@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bein Stock- توصية مجانية</title>
+    <style>
+        body { font-family: 'Tahoma', sans-serif; background: #f4f7fc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: 350px; }
+        h1 { color: #1a3e60; margin-bottom: 5px; }
+        .sub { color: #666; font-size: 14px; margin-bottom: 25px; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; }
+        button { background: #1a3e60; color: white; border: none; padding: 14px; width: 100%; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
+        button:hover { background: #143049; }
+        #msg { color: green; margin-top: 15px; display: none; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>Bein Stock</h1>
+    <p class="sub">تحليلات، توصيات، إدارة محافظ</p>
+    <h3>سجل معنا الحين</h3>
+    
+    <form id="leadForm">
+        <input type="text" id="userName" placeholder="الإسم" required>
+        <input type="tel" id="userPhone" placeholder="رقم الجوال" required>
+        <button type="submit">احصل على توصية مجانية</button>
+    </form>
+    <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
+</div>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var name = document.getElementById('userName').value;
+    var phone = document.getElementById('userPhone').value;
+    var msgDiv = document.getElementById('msg');
+
+    msgDiv.style.display = 'block';
+    msgDiv.style.color = '#1a3e60';
+    msgDiv.innerText = 'جاري الإرسال...';
+
+    // ✅ تم التحديث بالرابط الذي أرسلته
+    var scriptURL = 'https://script.google.com/macros/s/AKfycbz2VE6cg4Hu5vXy6l4CTQW9U5LLbXXXJzjwywEW8GCWHhHS8Vq3HVdl1IDT8I6xAfdIPQ/exec';
+
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: name, phone: phone })
+    })
+    .then(() => {
+        msgDiv.style.display = 'block';
+        msgDiv.style.color = 'green';
+        msgDiv.innerText = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
+        document.getElementById('leadForm').reset();
+    })
+    .catch(error => {
+        msgDiv.style.display = 'block';
+        msgDiv.style.color = 'red';
+        msgDiv.innerText = '❌ حصل خطأ، حاول مرة أخرى.';
+        console.error('Error!', error.message);
+    });
+});
+</script>
+</body>
+</html>
