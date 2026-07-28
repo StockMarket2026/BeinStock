@@ -3,69 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bein Stock- توصية مجانية</title>
+    <title>Bein Stock - اشترك الآن</title>
     <style>
-        body { font-family: 'Tahoma', sans-serif; background: #f4f7fc; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; width: 350px; }
-        h1 { color: #1a3e60; margin-bottom: 5px; }
-        .sub { color: #666; font-size: 14px; margin-bottom: 25px; }
-        input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; }
-        button { background: #1a3e60; color: white; border: none; padding: 14px; width: 100%; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; }
-        button:hover { background: #143049; }
-        #msg { color: green; margin-top: 15px; display: none; }
+        /* إعدادات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tahoma', 'Arial', sans-serif;
+            background: linear-gradient(145deg, #0b1a33, #1a3a5c);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(10px);
+            padding: 50px 40px;
+            border-radius: 30px;
+            max-width: 550px;
+            width: 100%;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* تنسيق الشعار */
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 180px;
+            height: auto;
+            border-radius: 12px;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.3));
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #ffd966;
+            font-weight: bold;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .form-group input {
+            padding: 18px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.12);
+            color: white;
+            outline: none;
+            transition: 0.3s;
+            text-align: right;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus {
+            background: rgba(255, 255, 255, 0.22);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .form-group button {
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            background: #ffd966;
+            color: #0b1a33;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.25);
+        }
+
+        .form-group button:hover {
+            transform: scale(1.03);
+            background: #ffe68f;
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 14px;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        #msg {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 30px;
+            background: rgba(0, 255, 0, 0.12);
+            display: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 40px 20px; }
+            h1 { font-size: 28px; }
+            .logo-container img { max-width: 140px; }
+        }
     </style>
 </head>
 <body>
 
-<div class="box">
+<div class="container">
+    <!-- ✅ تم تحديث الرابط المباشر للشعار -->
+    <div class="logo-container">
+        <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="Bein Stock Logo">
+    </div>
+
     <h1>Bein Stock</h1>
-    <p class="sub">تحليلات، توصيات، إدارة محافظ</p>
-    <h3>سجل معنا الحين</h3>
-    
-    <form id="leadForm">
-        <input type="text" id="userName" placeholder="الإسم" required>
+    <p class="subtitle">
+        <span class="highlight">تحليلات، توصيات، إدارة محافظ</span><br>
+        كل ما تحتاجه للنجاح في سوق الأسهم السعودي و الأمريكي
+    </p>
+
+    <form id="leadForm" class="form-group">
+        <input type="text" id="userName" placeholder="الإسم كاملاً" required>
         <input type="tel" id="userPhone" placeholder="رقم الجوال" required>
-        <button type="submit">احصل على توصية مجانية</button>
+        <button type="submit">🚀 احصل على توصية مجانية</button>
     </form>
+
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
+    <div class="footer">© 2026 Bein Stock. جميع الحقوق محفوظة</div>
 </div>
 
 <script>
-document.getElementById('leadForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-    var name = document.getElementById('userName').value;
-    var phone = document.getElementById('userPhone').value;
-    var msgDiv = document.getElementById('msg');
+        var name = document.getElementById('userName').value;
+        var phone = document.getElementById('userPhone').value;
+        var msgDiv = document.getElementById('msg');
 
-    msgDiv.style.display = 'block';
-    msgDiv.style.color = '#1a3e60';
-    msgDiv.innerText = 'جاري الإرسال...';
-
-    // ✅ تم التحديث بالرابط الذي أرسلته
-    var scriptURL = 'https://script.google.com/macros/s/AKfycbz2VE6cg4Hu5vXy6l4CTQW9U5LLbXXXJzjwywEW8GCWHhHS8Vq3HVdl1IDT8I6xAfdIPQ/exec';
-
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: name, phone: phone })
-    })
-    .then(() => {
         msgDiv.style.display = 'block';
-        msgDiv.style.color = 'green';
-        msgDiv.innerText = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
-        document.getElementById('leadForm').reset();
-    })
-    .catch(error => {
-        msgDiv.style.display = 'block';
-        msgDiv.style.color = 'red';
-        msgDiv.innerText = '❌ حصل خطأ، حاول مرة أخرى.';
-        console.error('Error!', error.message);
+        msgDiv.style.color = '#fff';
+        msgDiv.innerText = 'جاري الإرسال...';
+
+        // ✅ تم تحديث الرابط السحري الخاص بك
+        var scriptURL = 'https://script.google.com/macros/s/AKfycbz2VE6cg4Hu5vXy6l4CTQW9U5LLbXXXJzjwywEW8GCWHhHS8Vq3HVdl1IDT8I6xAfdIPQ/exec';
+
+        fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name, phone: phone })
+        })
+        .then(() => {
+            msgDiv.style.display = 'block';
+            msgDiv.style.color = '#d4edda';
+            msgDiv.innerText = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
+            document.getElementById('leadForm').reset();
+        })
+        .catch(error => {
+            msgDiv.style.display = 'block';
+            msgDiv.style.color = '#f8d7da';
+            msgDiv.innerText = '❌ حصل خطأ، حاول مرة أخرى.';
+            console.error('Error!', error.message);
+        });
     });
-});
 </script>
+
 </body>
 </html>
