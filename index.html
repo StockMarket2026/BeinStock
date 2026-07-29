@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bein Stock - اشترك الآن</title>
+    <title>Be In Stock - اشترك الآن</title>
     <style>
-        /* إعدادات عامة */
         * {
             margin: 0;
             padding: 0;
@@ -15,7 +14,7 @@
         body {
             font-family: 'Tahoma', 'Arial', sans-serif;
             background: linear-gradient(145deg, #0b1a33, #1a3a5c);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +34,6 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* تنسيق الشعار */
         .logo-container {
             margin-bottom: 20px;
         }
@@ -74,7 +72,7 @@
             margin-top: 15px;
         }
 
-        .form-group input {
+        .form-group input, .form-group select {
             padding: 18px 20px;
             border: none;
             border-radius: 50px;
@@ -84,13 +82,24 @@
             outline: none;
             transition: 0.3s;
             text-align: right;
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+            background-repeat: no-repeat;
+            background-position: left 20px center;
+            background-size: 16px;
+        }
+
+        .form-group select option {
+            background: #1a3a5c;
+            color: white;
         }
 
         .form-group input::placeholder {
             color: rgba(255, 255, 255, 0.7);
         }
 
-        .form-group input:focus {
+        .form-group input:focus, .form-group select:focus {
             background: rgba(255, 255, 255, 0.22);
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
         }
@@ -114,6 +123,27 @@
             box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
         }
 
+        .nav-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a:hover {
+            color: #ffd966;
+            border-bottom-color: #ffd966;
+        }
+
         .footer {
             margin-top: 35px;
             font-size: 14px;
@@ -134,31 +164,45 @@
             .container { padding: 40px 20px; }
             h1 { font-size: 28px; }
             .logo-container img { max-width: 140px; }
+            .nav-links { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- ✅ تم تحديث الرابط المباشر للشعار -->
     <div class="logo-container">
-        <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="Bein Stock Logo">
+        <!-- تم تحديث الرابط المباشر للشعار -->
+        <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="Be In Stock Logo">
     </div>
 
-    <h1>Bein Stock</h1>
+    <h1>Be In Stock</h1>
     <p class="subtitle">
         <span class="highlight">تحليلات، توصيات، إدارة محافظ</span><br>
         كل ما تحتاجه للنجاح في سوق الأسهم السعودي و الأمريكي
     </p>
 
+    <div class="nav-links">
+        <a href="about.html">🏢 من نحن</a>
+    </div>
+
     <form id="leadForm" class="form-group">
         <input type="text" id="userName" placeholder="الإسم كاملاً" required>
         <input type="tel" id="userPhone" placeholder="رقم الجوال" required>
+        
+        <!-- القائمة المنسدلة للسوق -->
+        <select id="userMarket" required>
+            <option value="" disabled selected>ما هو السوق الذي يهمك؟</option>
+            <option value="سعودي">🇸🇦 سوق الأسهم السعودي</option>
+            <option value="أمريكي">🇺🇸 سوق الأسهم الأمريكي</option>
+            <option value="كليهما">🌍 كليهما</option>
+        </select>
+
         <button type="submit">🚀 احصل على توصية مجانية</button>
     </form>
 
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
-    <div class="footer">© 2026 Bein Stock. جميع الحقوق محفوظة</div>
+    <div class="footer">© 2026 Be In Stock. جميع الحقوق محفوظة</div>
 </div>
 
 <script>
@@ -167,20 +211,21 @@
 
         var name = document.getElementById('userName').value;
         var phone = document.getElementById('userPhone').value;
+        var market = document.getElementById('userMarket').value;
         var msgDiv = document.getElementById('msg');
 
         msgDiv.style.display = 'block';
         msgDiv.style.color = '#fff';
         msgDiv.innerText = 'جاري الإرسال...';
 
-        // ✅ تم تحديث الرابط السحري الخاص بك
+        // ⚠️ تأكد من أن هذا الرابط هو الرابط الصحيح لنشر Google Apps Script الخاص بك
         var scriptURL = 'https://script.google.com/macros/s/AKfycbz2VE6cg4Hu5vXy6l4CTQW9U5LLbXXXJzjwywEW8GCWHhHS8Vq3HVdl1IDT8I6xAfdIPQ/exec';
 
         fetch(scriptURL, {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: name, phone: phone })
+            body: JSON.stringify({ name: name, phone: phone, market: market })
         })
         .then(() => {
             msgDiv.style.display = 'block';
