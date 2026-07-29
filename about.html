@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>من نحن - Be In Stock</title>
+    <title>من نحن - BE IN STOCK</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -46,114 +46,106 @@
             filter: drop-shadow(0 8px 20px rgba(255, 215, 0, 0.2));
         }
 
-        .about-main-title {
+        .about-box {
+            background: #FFD700;
+            padding: 35px 30px;
+            border-radius: 24px;
+            margin: 20px 0 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
+            border: 2px solid rgba(10, 22, 40, 0.15);
+        }
+
+        .about-box .about-title {
             font-size: 40px;
             font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 10px;
+            color: #0a1628;
+            margin-bottom: 15px;
             font-family: 'Noto Naskh Arabic', serif;
         }
 
-        .about-hero-text {
-            font-size: 20px;
-            color: #00C897;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .about-description {
+        .about-box .about-text {
             font-size: 18px;
             line-height: 2;
+            color: #0a1628;
+            font-weight: 500;
+            margin-bottom: 20px;
             text-align: justify;
-            opacity: 0.95;
-            margin-bottom: 35px;
         }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .about-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 215, 0, 0.10);
-            border-radius: 20px;
-            padding: 25px 18px;
-            transition: 0.35s ease;
-            backdrop-filter: blur(4px);
-            text-align: center;
-        }
-
-        .about-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 215, 0, 0.04);
-        }
-
-        .about-card .icon {
-            font-size: 38px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .about-card h3 {
-            font-size: 22px;
+        .about-box .about-text strong {
+            color: #0a1628;
             font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 10px;
+        }
+
+        .about-box .sub-section {
+            margin: 20px 0 15px 0;
+        }
+
+        .about-box .sub-section h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0a1628;
+            margin-bottom: 8px;
             font-family: 'Noto Naskh Arabic', serif;
         }
 
-        .about-card p {
-            font-size: 16px;
+        .about-box .sub-section p {
+            font-size: 17px;
             line-height: 1.9;
-            opacity: 0.85;
-            color: #E0E8F0;
-            font-weight: 400;
-        }
-
-        .about-card .values-list {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
-            text-align: center;
-        }
-
-        .about-card .values-list li {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.08);
-            padding: 5px 14px;
-            margin: 4px 3px;
-            border-radius: 20px;
-            font-size: 15px;
-            color: #E0E8F0;
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #FFD700;
             color: #0a1628;
-            padding: 14px 40px;
+            font-weight: 500;
+        }
+
+        .about-box .values-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 15px 0 20px 0;
+        }
+
+        .about-box .values-tags span {
+            background: rgba(10, 22, 40, 0.12);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0a1628;
+            border: 1px solid rgba(10, 22, 40, 0.1);
+        }
+
+        .about-box .closing-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #0a1628;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .about-box .closing-text strong {
+            color: #0a1628;
+        }
+
+        .about-box .cta-link {
+            display: inline-block;
+            background: #0a1628;
+            color: #FFD700;
+            padding: 12px 35px;
             border-radius: 50px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             text-decoration: none;
-            margin: 25px 0 15px 0;
+            margin-top: 15px;
             transition: 0.3s;
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
             font-family: 'Noto Naskh Arabic', serif;
             border: none;
             cursor: pointer;
         }
 
-        .cta-button:hover {
+        .about-box .cta-link:hover {
             transform: scale(1.03);
-            background: #FFE44D;
-            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.35);
+            background: #1a2a4a;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .footer {
@@ -198,11 +190,9 @@
 
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
-            .about-main-title { font-size: 32px; }
-            .about-hero-text { font-size: 18px; }
-            .cards-grid { grid-template-columns: 1fr; }
+            .about-box { padding: 20px 15px; }
+            .about-box .about-title { font-size: 30px; }
             .logo-container img { max-width: 120px; }
-            .cta-button { padding: 12px 30px; font-size: 18px; }
         }
     </style>
 </head>
@@ -210,52 +200,50 @@
 
 <div class="container">
     <div class="logo-container">
-        <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="Be In Stock Logo">
+        <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="BE IN STOCK Logo">
     </div>
 
-    <div class="about-main-title">من نحن</div>
-    <div class="about-hero-text">شريكك الموثوق في عالم الاستثمار والأسواق المالية</div>
+    <div class="about-box">
+        <div class="about-title">من نحن</div>
+        
+        <p class="about-text">
+            <strong>BE IN STOCK</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
+        </p>
 
-    <p class="about-description">
-        <strong>Bein Stock</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
-    </p>
-
-    <div class="cards-grid">
-        <div class="about-card">
-            <span class="icon">🌟</span>
-            <h3>رؤيتنا</h3>
+        <div class="sub-section">
+            <h3>🌟 رؤيتنا</h3>
             <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
         </div>
-        <div class="about-card">
-            <span class="icon">📜</span>
-            <h3>رسالتنا</h3>
+
+        <div class="sub-section">
+            <h3>📜 رسالتنا</h3>
             <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
         </div>
-        <div class="about-card">
-            <span class="icon">💎</span>
-            <h3>قيمنا</h3>
-            <ul class="values-list">
-                <li>الثقة</li>
-                <li>الشفافية</li>
-                <li>الاحترافية</li>
-                <li>الابتكار</li>
-                <li>التركيز على العميل</li>
-            </ul>
+
+        <div class="sub-section">
+            <h3>💎 قيمنا</h3>
+            <div class="values-tags">
+                <span>الثقة</span>
+                <span>الشفافية</span>
+                <span>الاحترافية</span>
+                <span>الابتكار</span>
+                <span>التركيز على العميل</span>
+            </div>
         </div>
+
+        <div class="closing-text">
+            <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
+            اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>BE IN STOCK</strong> يرافقونك في رحلتك الاستثمارية بثقة.
+        </div>
+
+        <a href="#" class="cta-link">📞 تواصل معنا</a>
     </div>
-
-    <p style="font-size: 18px; line-height: 1.8; margin: 20px 0 10px 0; opacity: 0.9;">
-        <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
-        اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>Bein Stock</strong> يرافقونك في رحلتك الاستثمارية بثقة.
-    </p>
-
-    <a href="#" class="cta-button">📞 تواصل معنا</a>
 
     <div class="nav-links">
         <a href="index.html">🏠 الرئيسية</a>
     </div>
 
-    <div class="footer">© 2026 Be In Stock. جميع الحقوق محفوظة</div>
+    <div class="footer">© 2026 BE IN STOCK. جميع الحقوق محفوظة</div>
     <div class="developer-credit">Designed and Developed by Shady Taha</div>
 </div>
 
