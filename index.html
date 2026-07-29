@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be In Stock - اشترك الآن</title>
-    <!-- ✅ خط الرقعة (Noto Naskh Arabic) -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -30,7 +29,7 @@
             backdrop-filter: blur(12px);
             padding: 50px 40px;
             border-radius: 30px;
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 215, 0, 0.12);
@@ -71,22 +70,142 @@
             font-weight: 700;
         }
 
-        /* ✅ قسم "نحن نقدم" - البطاقات */
-        .services-section {
+        /* ✅ قسم "من نحن" الجديد */
+        .about-section {
             margin: 40px 0 35px 0;
+            text-align: center;
         }
 
-        .services-title {
+        .about-main-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        .about-hero-text {
+            font-size: 20px;
+            color: #00C897;
+            font-weight: 600;
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-description {
+            font-size: 18px;
+            line-height: 2;
+            text-align: justify;
+            opacity: 0.95;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+
+        /* ✅ البطاقات الثلاث (رؤيتنا - رسالتنا - قيمنا) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.10);
+            border-radius: 20px;
+            padding: 25px 18px;
+            transition: 0.35s ease;
+            backdrop-filter: blur(4px);
+            text-align: center;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 215, 0, 0.04);
+        }
+
+        .about-card .icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .about-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 10px;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        .about-card p {
+            font-size: 16px;
+            line-height: 1.9;
+            opacity: 0.85;
+            color: #E0E8F0;
+            font-weight: 400;
+        }
+
+        .about-card .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            text-align: center;
+        }
+
+        .about-card .values-list li {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.08);
+            padding: 5px 14px;
+            margin: 4px 3px;
+            border-radius: 20px;
+            font-size: 15px;
+            color: #E0E8F0;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        /* ✅ زر الدعوة لاتخاذ إجراء */
+        .cta-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #0a1628;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 25px 0 15px 0;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+            font-family: 'Noto Naskh Arabic', serif;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.03);
+            background: #FFE44D;
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.35);
+        }
+
+        /* ✅ قسم "لماذا Be In Stock؟" */
+        .why-section {
+            margin: 50px 0 30px 0;
+        }
+
+        .why-title {
             font-size: 32px;
             font-weight: 700;
             color: #FFD700;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-family: 'Noto Naskh Arabic', serif;
             position: relative;
             display: inline-block;
         }
 
-        .services-title::after {
+        .why-title::after {
             content: '';
             display: block;
             width: 60%;
@@ -96,48 +215,38 @@
             border-radius: 2px;
         }
 
-        .cards-grid {
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .service-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 215, 0, 0.10);
-            border-radius: 20px;
-            padding: 25px 18px;
-            transition: 0.35s ease;
-            backdrop-filter: blur(4px);
+        .why-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 200, 150, 0.15);
+            border-radius: 16px;
+            padding: 18px 12px;
+            transition: 0.3s;
+            text-align: center;
         }
 
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 215, 0, 0.04);
+        .why-item:hover {
+            background: rgba(0, 200, 150, 0.06);
+            border-color: rgba(0, 200, 150, 0.3);
+            transform: translateY(-3px);
         }
 
-        .service-card .icon {
-            font-size: 36px;
-            margin-bottom: 12px;
+        .why-item .icon {
+            font-size: 30px;
             display: block;
+            margin-bottom: 8px;
         }
 
-        .service-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 10px;
-            font-family: 'Noto Naskh Arabic', serif;
-        }
-
-        .service-card p {
+        .why-item p {
             font-size: 15px;
-            line-height: 1.8;
+            line-height: 1.6;
             opacity: 0.85;
-            color: #E0E8F0;
             font-weight: 400;
         }
 
@@ -146,7 +255,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 25px;
+            margin-top: 30px;
         }
 
         .form-group input, .form-group select {
@@ -250,10 +359,12 @@
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
             h1 { font-size: 32px; }
-            .services-title { font-size: 26px; }
+            .about-main-title { font-size: 32px; }
+            .about-hero-text { font-size: 18px; }
             .cards-grid { grid-template-columns: 1fr; }
-            .service-card { padding: 20px 15px; }
+            .why-grid { grid-template-columns: 1fr; }
             .logo-container img { max-width: 140px; }
+            .cta-button { padding: 12px 30px; font-size: 18px; }
         }
     </style>
 </head>
@@ -270,27 +381,72 @@
         كل ما تحتاجه للنجاح في سوق الأسهم السعودي و الأمريكي
     </p>
 
-    <!-- ✅ قسم "نحن نقدم" بالبطاقات -->
-    <div class="services-section">
-        <div class="services-title">🌟 نحن نقدم</div>
+    <!-- ✅ قسم "من نحن" الجديد -->
+    <div class="about-section">
+        <div class="about-main-title">من نحن</div>
+        <div class="about-hero-text">شريكك الموثوق في عالم الاستثمار والأسواق المالية</div>
+        
+        <p class="about-description">
+            <strong>Bein Stock</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
+        </p>
+
+        <!-- البطاقات الثلاث -->
         <div class="cards-grid">
-            <!-- بطاقة 1 -->
-            <div class="service-card">
+            <div class="about-card">
+                <span class="icon">🌟</span>
+                <h3>رؤيتنا</h3>
+                <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
+            </div>
+            <div class="about-card">
+                <span class="icon">📜</span>
+                <h3>رسالتنا</h3>
+                <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
+            </div>
+            <div class="about-card">
+                <span class="icon">💎</span>
+                <h3>قيمنا</h3>
+                <ul class="values-list">
+                    <li>الثقة</li>
+                    <li>الشفافية</li>
+                    <li>الاحترافية</li>
+                    <li>الابتكار</li>
+                    <li>التركيز على العميل</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- النص الختامي وزر الدعوة -->
+        <p style="font-size: 18px; line-height: 1.8; margin: 20px 0 10px 0; opacity: 0.9;">
+            <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
+            اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>Bein Stock</strong> يرافقونك في رحلتك الاستثمارية بثقة.
+        </p>
+
+        <a href="#" class="cta-button">📞 تواصل معنا</a>
+    </div>
+
+    <!-- ✅ قسم "لماذا Be In Stock؟" بدل "نحن نقدم" -->
+    <div class="why-section">
+        <div class="why-title">لماذا Be In Stock؟</div>
+        <div class="why-grid">
+            <div class="why-item">
                 <span class="icon">📊</span>
-                <h3>التوصيات المالية</h3>
-                <p>يقوم محللينا ذوي الخبرات العالية بتقديم أقوى التوصيات المناسبة لوضع محفظتك و للسيولة المتوفرة معك بعد تحليل السهم فنياً و متابعة أخباره ومعرفة أداءه في السوق</p>
+                <p>تحليلات مالية مبنية على البيانات</p>
             </div>
-            <!-- بطاقة 2 -->
-            <div class="service-card">
-                <span class="icon">💼</span>
-                <h3>إدارة المحفظة</h3>
-                <p>نساعدك في إدارة محفظتك الاستثمارية من خلال استشاريين متخصصين ذوي كفاءة عالية يقومون بدراسة اسهمك و فحص محفظتك لاتخاذ أفضل القرارات الاستثمارية لتحقيق الربح الوفير</p>
+            <div class="why-item">
+                <span class="icon">👨‍💼</span>
+                <p>فريق يمتلك خبرة عملية في الأسواق المالية</p>
             </div>
-            <!-- بطاقة 3 -->
-            <div class="service-card">
+            <div class="why-item">
                 <span class="icon">📈</span>
-                <h3>التحليلات الفنية</h3>
-                <p>نقوم بدعمك دائماً وارشادك عن طريق تحليل اسهمك لمعرفة أفضل نقاط الشراء و البيع و نظرة عامه لأفضل الفرص لتحقيق أفضل عائد ربح وتجنب الخسائر</p>
+                <p>استراتيجيات استثمار تناسب مختلف الأهداف</p>
+            </div>
+            <div class="why-item">
+                <span class="icon">🤝</span>
+                <p>دعم واستشارات مستمرة لمساعدتك في اتخاذ القرار</p>
+            </div>
+            <div class="why-item">
+                <span class="icon">🔍</span>
+                <p>الالتزام بالشفافية والاحترافية في كل خطوة</p>
             </div>
         </div>
     </div>
