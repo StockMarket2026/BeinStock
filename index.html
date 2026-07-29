@@ -54,11 +54,8 @@
             letter-spacing: 0.5px;
         }
 
-        .main-subtitle span {
-            margin: 0 6px;
-        }
+        .main-subtitle span { margin: 0 6px; }
 
-        /* ✅ المقدمة القصيرة */
         .intro-text {
             font-size: 18px;
             line-height: 2;
@@ -151,9 +148,10 @@
             color: #2EDB73;
         }
 
-        /* ✅ قسم "لماذا BE IN STOCK؟" - 4 كروت */
+        /* ✅ قسم "لماذا BE IN STOCK؟" - أسطر تحت بعض */
         .why-section {
             margin: 45px 0 30px 0;
+            text-align: right;
         }
 
         .why-title {
@@ -164,6 +162,8 @@
             font-family: 'Alexandria', sans-serif;
             position: relative;
             display: inline-block;
+            text-align: center;
+            width: 100%;
         }
 
         .why-title::after {
@@ -176,44 +176,47 @@
             border-radius: 4px;
         }
 
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 16px;
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             margin-top: 20px;
+            padding: 0 10px;
         }
 
         .why-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 18px;
             background: #1A2438;
             border: 1px solid #2A3550;
-            border-radius: 16px;
-            padding: 18px 12px;
+            border-radius: 14px;
             transition: 0.3s;
-            text-align: center;
         }
 
         .why-item:hover {
             border-color: #5B3DF5;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            background: rgba(91, 61, 245, 0.05);
         }
 
-        /* ✅ أيقونات الكروت بالتبادل */
+        /* ✅ أيقونات بالسطر بالتبادل */
         .why-item:nth-child(1) .icon { color: #5B3DF5; }
         .why-item:nth-child(2) .icon { color: #2EDB73; }
         .why-item:nth-child(3) .icon { color: #F5C84C; }
         .why-item:nth-child(4) .icon { color: #5B3DF5; }
 
         .why-item .icon {
-            font-size: 32px;
-            display: block;
-            margin-bottom: 10px;
+            font-size: 24px;
+            min-width: 32px;
+            text-align: center;
         }
 
         .why-item p {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 500;
             color: #CBD5E1;
+            margin: 0;
             line-height: 1.5;
         }
 
@@ -288,15 +291,12 @@
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
             h1 { font-size: 32px; }
-            .why-grid { grid-template-columns: 1fr 1fr; }
             .logo-container img { max-width: 130px; }
             .about-box-link { padding: 15px 18px; }
             .about-box-link .about-text { font-size: 17px; }
             .form-group button { height: 52px; font-size: 18px; }
-        }
-
-        @media (max-width: 400px) {
-            .why-grid { grid-template-columns: 1fr; }
+            .why-item { padding: 10px 14px; }
+            .why-item p { font-size: 14px; }
         }
     </style>
 </head>
@@ -312,7 +312,6 @@
         تحليلات <span>•</span> توصيات <span>•</span> إدارة محافظ
     </p>
 
-    <!-- ✅ المقدمة القصيرة -->
     <div class="intro-text">
         <span class="highlight-gold">حلل بذكاء. استثمر بثقة.</span><br>
         احصل على <strong>توصية مجانية</strong> من فريق متخصص في الأسواق السعودية والأمريكية.
@@ -333,10 +332,10 @@
 
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
 
-    <!-- ✅ قسم "لماذا BE IN STOCK؟" - 4 كروت -->
+    <!-- ✅ قسم "لماذا BE IN STOCK؟" - أسطر تحت بعض -->
     <div class="why-section">
         <div class="why-title">لماذا BE IN STOCK؟</div>
-        <div class="why-grid">
+        <div class="why-list">
             <div class="why-item">
                 <span class="icon">📊</span>
                 <p>تحليلات احترافية</p>
