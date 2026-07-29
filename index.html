@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BE IN STOCK - اشترك الآن</title>
+    <title>BE IN STOCK - الرئيسية</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Naskh Arabic', 'Tahoma', serif;
@@ -35,10 +31,7 @@
             border: 1px solid rgba(255, 215, 0, 0.12);
         }
 
-        .logo-container {
-            margin-bottom: 15px;
-        }
-
+        .logo-container { margin-bottom: 15px; }
         .logo-container img {
             max-width: 180px;
             height: auto;
@@ -50,7 +43,6 @@
             font-size: 42px;
             font-weight: 700;
             margin-bottom: 5px;
-            letter-spacing: 1px;
             color: #FFD700;
             text-shadow: 0 0 40px rgba(255, 215, 0, 0.15);
             font-family: 'Noto Naskh Arabic', serif;
@@ -59,119 +51,27 @@
         .main-subtitle {
             font-size: 18px;
             opacity: 0.85;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             line-height: 1.8;
             color: #E0E8F0;
             font-weight: 400;
         }
 
-        .highlight {
-            color: #00C897;
-            font-weight: 700;
-        }
+        .highlight { color: #00C897; font-weight: 700; }
 
-        /* ✅ صندوق "من نحن" بالخلفية الصفراء */
-        .about-box {
-            background: #FFD700;
-            padding: 30px 25px;
-            border-radius: 24px;
-            margin: 30px 0 35px 0;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
-            border: 2px solid rgba(10, 22, 40, 0.15);
-        }
-
-        .about-box .about-title {
-            font-size: 38px;
-            font-weight: 700;
-            color: #0a1628;
-            margin-bottom: 15px;
-            font-family: 'Noto Naskh Arabic', serif;
-        }
-
-        .about-box .about-text {
-            font-size: 18px;
+        /* ✅ المقدمة القصيرة (النص اللي فوق التسجيل) */
+        .intro-text {
+            font-size: 19px;
             line-height: 2;
-            color: #0a1628;
-            font-weight: 500;
-            margin-bottom: 20px;
-            text-align: justify;
+            color: #E0E8F0;
+            margin: 10px 0 25px 0;
+            opacity: 0.95;
+            font-weight: 400;
         }
 
-        .about-box .about-text strong {
-            color: #0a1628;
-            font-weight: 700;
-        }
-
-        .about-box .sub-section {
-            margin: 20px 0 15px 0;
-        }
-
-        .about-box .sub-section h3 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0a1628;
-            margin-bottom: 8px;
-            font-family: 'Noto Naskh Arabic', serif;
-        }
-
-        .about-box .sub-section p {
-            font-size: 17px;
-            line-height: 1.9;
-            color: #0a1628;
-            font-weight: 500;
-        }
-
-        .about-box .values-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin: 15px 0 20px 0;
-        }
-
-        .about-box .values-tags span {
-            background: rgba(10, 22, 40, 0.12);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #0a1628;
-            border: 1px solid rgba(10, 22, 40, 0.1);
-        }
-
-        .about-box .closing-text {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #0a1628;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .about-box .closing-text strong {
-            color: #0a1628;
-        }
-
-        .about-box .cta-link {
-            display: inline-block;
-            background: #0a1628;
+        .intro-text strong {
             color: #FFD700;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-size: 18px;
             font-weight: 700;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: 0.3s;
-            font-family: 'Noto Naskh Arabic', serif;
-            border: none;
-            cursor: pointer;
-        }
-
-        .about-box .cta-link:hover {
-            transform: scale(1.03);
-            background: #1a2a4a;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         /* ✅ نموذج التسجيل */
@@ -179,7 +79,7 @@
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .form-group input, .form-group select {
@@ -236,9 +136,20 @@
             box-shadow: 0 12px 35px rgba(255, 215, 0, 0.35);
         }
 
-        /* ✅ قسم "لماذا BE IN STOCK؟" (تحت التسجيل) */
+        #msg {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 30px;
+            background: rgba(0, 200, 150, 0.10);
+            border: 1px solid rgba(0, 200, 150, 0.2);
+            display: none;
+            font-weight: 700;
+            color: #00C897;
+        }
+
+        /* ✅ قسم "لماذا BE IN STOCK؟" */
         .why-section {
-            margin: 45px 0 20px 0;
+            margin: 45px 0 30px 0;
         }
 
         .why-title {
@@ -296,27 +207,48 @@
             font-weight: 400;
         }
 
+        /* ✅ مربع "من نحن" الرابط */
+        .about-box-link {
+            background: #FFD700;
+            padding: 20px 25px;
+            border-radius: 20px;
+            margin: 25px 0 20px 0;
+            display: inline-block;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(10, 22, 40, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .about-box-link:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.35);
+            background: #FFE44D;
+        }
+
+        .about-box-link .about-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0a1628;
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+
+        .about-box-link .about-sub {
+            font-size: 16px;
+            font-weight: 500;
+            color: #0a1628;
+            opacity: 0.8;
+            margin-top: 4px;
+        }
+
         .footer {
             margin-top: 35px;
             font-size: 14px;
             opacity: 0.5;
             letter-spacing: 1px;
             color: #FFD700;
-        }
-
-        .about-link {
-            display: block;
-            margin-top: 20px;
-            color: rgba(255, 215, 0, 0.5);
-            text-decoration: none;
-            font-size: 16px;
-            transition: 0.3s;
-            font-family: 'Noto Naskh Arabic', serif;
-        }
-
-        .about-link:hover {
-            color: #FFD700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
         }
 
         .developer-credit {
@@ -329,24 +261,13 @@
             font-family: 'Arial', sans-serif;
         }
 
-        #msg {
-            margin-top: 20px;
-            padding: 12px;
-            border-radius: 30px;
-            background: rgba(0, 200, 150, 0.10);
-            border: 1px solid rgba(0, 200, 150, 0.2);
-            display: none;
-            font-weight: 700;
-            color: #00C897;
-        }
-
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
             h1 { font-size: 32px; }
-            .about-box { padding: 20px 15px; }
-            .about-box .about-title { font-size: 30px; }
             .why-grid { grid-template-columns: 1fr; }
             .logo-container img { max-width: 140px; }
+            .about-box-link { padding: 15px 20px; }
+            .about-box-link .about-text { font-size: 18px; }
         }
     </style>
 </head>
@@ -363,41 +284,10 @@
         كل ما تحتاجه للنجاح في سوق الأسهم السعودي و الأمريكي
     </p>
 
-    <!-- ✅ صندوق "من نحن" بالخلفية الصفراء -->
-    <div class="about-box">
-        <div class="about-title">من نحن</div>
-        
-        <p class="about-text">
-            <strong>BE IN STOCK</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
-        </p>
-
-        <div class="sub-section">
-            <h3>🌟 رؤيتنا</h3>
-            <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
-        </div>
-
-        <div class="sub-section">
-            <h3>📜 رسالتنا</h3>
-            <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
-        </div>
-
-        <div class="sub-section">
-            <h3>💎 قيمنا</h3>
-            <div class="values-tags">
-                <span>الثقة</span>
-                <span>الشفافية</span>
-                <span>الاحترافية</span>
-                <span>الابتكار</span>
-                <span>التركيز على العميل</span>
-            </div>
-        </div>
-
-        <div class="closing-text">
-            <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
-            اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>BE IN STOCK</strong> يرافقونك في رحلتك الاستثمارية بثقة.
-        </div>
-
-        <a href="#" class="cta-link">📞 تواصل معنا</a>
+    <!-- ✅ المقدمة القصيرة -->
+    <div class="intro-text">
+        <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
+        اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>BE IN STOCK</strong> يرافقونك في رحلتك الاستثمارية بثقة.
     </div>
 
     <!-- ✅ نموذج التسجيل -->
@@ -415,7 +305,7 @@
 
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
 
-    <!-- ✅ قسم "لماذا BE IN STOCK؟" (تحت التسجيل) -->
+    <!-- ✅ قسم "لماذا BE IN STOCK؟" -->
     <div class="why-section">
         <div class="why-title">لماذا BE IN STOCK؟</div>
         <div class="why-grid">
@@ -442,7 +332,12 @@
         </div>
     </div>
 
-    <a href="about.html" class="about-link">🏢 من نحن</a>
+    <!-- ✅ مربع "من نحن" الرابط (بيودي لـ about.html) -->
+    <a href="about.html" class="about-box-link">
+        <div class="about-text">🏢 من نحن</div>
+        <div class="about-sub">تعرف على شركتنا وفريقنا ورؤيتنا</div>
+    </a>
+
     <div class="footer">© 2026 BE IN STOCK. جميع الحقوق محفوظة</div>
     <div class="developer-credit">Designed and Developed by Shady Taha</div>
 </div>
