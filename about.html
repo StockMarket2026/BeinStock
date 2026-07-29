@@ -4,92 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>من نحن - BE IN STOCK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Noto Naskh Arabic', 'Tahoma', serif;
-            background: linear-gradient(145deg, #0a1628, #1a2a4a);
+            font-family: 'Alexandria', 'Tahoma', sans-serif;
+            background: #0F172A;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #E0E8F0;
+            color: #475569;
             padding: 20px;
         }
 
         .container {
-            background: rgba(10, 22, 40, 0.80);
-            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.92);
             padding: 50px 40px;
             border-radius: 30px;
             max-width: 800px;
             width: 100%;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 215, 0, 0.12);
+            border: 1px solid #2A3550;
+        }
+
+        .logo-container { margin-bottom: 20px; }
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+            border-radius: 12px;
+            filter: drop-shadow(0 8px 20px rgba(91, 61, 245, 0.15));
+        }
+
+        /* ✅ الكارت الأبيض الكريمي */
+        .about-card {
+            background: #FFFFFF;
+            padding: 40px 35px;
+            border-radius: 24px;
+            margin: 15px 0 25px 0;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
 
-        .logo-container { margin-bottom: 25px; }
-        .logo-container img {
-            max-width: 160px;
-            height: auto;
-            border-radius: 12px;
-            filter: drop-shadow(0 8px 20px rgba(255, 215, 0, 0.2));
-        }
-
-        .about-box {
-            background: #FFD700;
-            padding: 35px 30px;
-            border-radius: 24px;
-            margin: 20px 0 30px 0;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.25);
-            border: 2px solid rgba(10, 22, 40, 0.15);
-        }
-
-        .about-box .about-title {
-            font-size: 40px;
+        .about-card .about-title {
+            font-size: 38px;
             font-weight: 700;
-            color: #0a1628;
-            margin-bottom: 15px;
-            font-family: 'Noto Naskh Arabic', serif;
+            color: #111827;
+            margin-bottom: 6px;
+            font-family: 'Alexandria', sans-serif;
         }
 
-        .about-box .about-text {
+        .about-card .about-subtitle {
             font-size: 18px;
-            line-height: 2;
-            color: #0a1628;
-            font-weight: 500;
-            margin-bottom: 20px;
-            text-align: justify;
+            font-weight: 600;
+            color: #2EDB73;
+            margin-bottom: 22px;
+            font-family: 'Alexandria', sans-serif;
         }
 
-        .about-box .about-text strong {
-            color: #0a1628;
-            font-weight: 700;
-        }
-
-        .about-box .sub-section {
-            margin: 20px 0 15px 0;
-        }
-
-        .about-box .sub-section h3 {
-            font-size: 24px;
-            font-weight: 700;
-            color: #0a1628;
-            margin-bottom: 8px;
-            font-family: 'Noto Naskh Arabic', serif;
-        }
-
-        .about-box .sub-section p {
+        .about-card .about-text {
             font-size: 17px;
-            line-height: 1.9;
-            color: #0a1628;
-            font-weight: 500;
+            line-height: 2;
+            color: #475569;
+            font-weight: 400;
+            text-align: justify;
+            margin-bottom: 25px;
         }
 
-        .about-box .values-tags {
+        .about-card .about-text strong {
+            color: #111827;
+            font-weight: 600;
+        }
+
+        /* ✅ الأقسام (رؤيتنا - رسالتنا - قيمنا) */
+        .about-card .sub-section {
+            margin: 35px 0 15px 0;
+        }
+
+        .about-card .sub-section .section-icon {
+            font-size: 32px;
+            color: #5B3DF5;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .about-card .sub-section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 6px;
+            font-family: 'Alexandria', sans-serif;
+        }
+
+        .about-card .sub-section p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #475569;
+            font-weight: 400;
+        }
+
+        /* ✅ القيم - Chips */
+        .about-card .values-chips {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -97,60 +112,83 @@
             margin: 15px 0 20px 0;
         }
 
-        .about-box .values-tags span {
-            background: rgba(10, 22, 40, 0.12);
-            padding: 6px 18px;
+        .about-card .values-chips .chip {
+            padding: 8px 20px;
             border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #0a1628;
-            border: 1px solid rgba(10, 22, 40, 0.1);
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Alexandria', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .about-box .closing-text {
-            font-size: 18px;
+        .about-card .values-chips .chip.purple {
+            background: rgba(91, 61, 245, 0.12);
+            color: #5B3DF5;
+        }
+
+        .about-card .values-chips .chip.green {
+            background: rgba(46, 219, 115, 0.12);
+            color: #2EDB73;
+        }
+
+        .about-card .closing-text {
+            font-size: 17px;
             line-height: 1.8;
-            color: #0a1628;
+            color: #475569;
+            font-weight: 400;
+            margin: 15px 0 20px 0;
+        }
+
+        .about-card .closing-text strong {
+            color: #111827;
             font-weight: 600;
-            margin-top: 10px;
         }
 
-        .about-box .closing-text strong {
-            color: #0a1628;
-        }
-
-        .about-box .cta-link {
+        /* ✅ الزر */
+        .about-card .cta-link {
             display: inline-block;
-            background: #0a1628;
-            color: #FFD700;
-            padding: 12px 35px;
+            background: #5B3DF5;
+            color: #FFFFFF;
+            padding: 14px 40px;
             border-radius: 50px;
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
-            margin-top: 15px;
             transition: 0.3s;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Alexandria', sans-serif;
             border: none;
             cursor: pointer;
+            box-shadow: 0 8px 25px rgba(91, 61, 245, 0.2);
         }
 
-        .about-box .cta-link:hover {
+        .about-card .cta-link:hover {
+            background: #725CFF;
             transform: scale(1.03);
-            background: #1a2a4a;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 12px 35px rgba(91, 61, 245, 0.3);
         }
 
         .footer {
-            margin-top: 35px;
+            margin-top: 30px;
             font-size: 14px;
-            opacity: 0.5;
-            letter-spacing: 1px;
-            color: #FFD700;
+            opacity: 0.4;
+            letter-spacing: 0.5px;
+            color: #CBD5E1;
+        }
+
+        .footer a {
+            color: #CBD5E1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer a:hover {
+            color: #5B3DF5;
         }
 
         .nav-links {
-            margin-top: 25px;
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -158,17 +196,18 @@
         }
 
         .nav-links a {
-            color: rgba(255, 215, 0, 0.5);
+            color: rgba(203, 213, 225, 0.6);
             text-decoration: none;
             transition: 0.3s;
             border-bottom: 2px solid transparent;
             padding-bottom: 4px;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Alexandria', sans-serif;
+            font-weight: 500;
         }
 
         .nav-links a:hover {
-            color: #FFD700;
-            border-bottom-color: #FFD700;
+            color: #5B3DF5;
+            border-bottom-color: #5B3DF5;
         }
 
         .developer-credit {
@@ -176,16 +215,19 @@
             font-size: 11px;
             opacity: 0.25;
             letter-spacing: 0.5px;
-            color: #aab8c9;
+            color: #CBD5E1;
             direction: ltr;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Alexandria', sans-serif;
+            font-weight: 400;
         }
 
         @media (max-width: 600px) {
             .container { padding: 30px 20px; }
-            .about-box { padding: 20px 15px; }
-            .about-box .about-title { font-size: 30px; }
+            .about-card { padding: 25px 20px; }
+            .about-card .about-title { font-size: 30px; }
+            .about-card .about-subtitle { font-size: 16px; }
             .logo-container img { max-width: 120px; }
+            .about-card .sub-section { margin: 25px 0 10px 0; }
         }
     </style>
 </head>
@@ -196,37 +238,45 @@
         <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="BE IN STOCK Logo">
     </div>
 
-    <div class="about-box">
+    <!-- ✅ الكارت الأبيض الكريمي -->
+    <div class="about-card">
         <div class="about-title">من نحن</div>
-        
+        <div class="about-subtitle">خبرة تقود استثمارك بثقة</div>
+
         <p class="about-text">
-            <strong>Be In Stock</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
+            <strong>Be In Stock</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق.<br>
+            نساعد المستثمرين على اتخاذ قرارات أكثر وعيًا من خلال التحليل الاحترافي والخبرة العملية.
         </p>
 
+        <!-- رؤيتنا -->
         <div class="sub-section">
-            <h3>🌟 رؤيتنا</h3>
+            <div class="section-icon">👁️</div>
+            <h3>رؤيتنا</h3>
             <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
         </div>
 
+        <!-- رسالتنا -->
         <div class="sub-section">
-            <h3>📜 رسالتنا</h3>
+            <div class="section-icon">🎯</div>
+            <h3>رسالتنا</h3>
             <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
         </div>
 
+        <!-- قيمنا - Chips -->
         <div class="sub-section">
-            <h3>💎 قيمنا</h3>
-            <div class="values-tags">
-                <span>الثقة</span>
-                <span>الشفافية</span>
-                <span>الاحترافية</span>
-                <span>الابتكار</span>
-                <span>التركيز على العميل</span>
+            <div class="section-icon">💎</div>
+            <h3>قيمنا</h3>
+            <div class="values-chips">
+                <span class="chip purple">🟣 الثقة</span>
+                <span class="chip green">🟢 الاحترافية</span>
+                <span class="chip purple">🟣 الابتكار</span>
+                <span class="chip green">🟢 الشفافية</span>
             </div>
         </div>
 
         <div class="closing-text">
             <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
-            اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>Be In Stock</strong> يرافقونك في رحلتك الاستثمارية بثقة.
+            اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>BE IN STOCK</strong> يرافقونك في رحلتك الاستثمارية بثقة.
         </div>
 
         <a href="#" class="cta-link">📞 تواصل معنا</a>
@@ -236,7 +286,7 @@
         <a href="index.html">🏠 الرئيسية</a>
     </div>
 
-    <div class="footer">© 2026 BE IN STOCK. جميع الحقوق محفوظة</div>
+    <div class="footer">© 2026 <a href="index.html">BE IN STOCK</a>. جميع الحقوق محفوظة</div>
     <div class="developer-credit">Designed and Developed by Shady Taha</div>
 </div>
 
