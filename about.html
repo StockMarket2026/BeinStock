@@ -28,7 +28,7 @@
             backdrop-filter: blur(12px);
             padding: 50px 40px;
             border-radius: 30px;
-            max-width: 700px;
+            max-width: 800px;
             width: 100%;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 215, 0, 0.12);
@@ -46,46 +46,126 @@
             filter: drop-shadow(0 8px 20px rgba(255, 215, 0, 0.2));
         }
 
-        h1 {
-            font-size: 38px;
+        .about-main-title {
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 20px;
             color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.10);
+            margin-bottom: 10px;
             font-family: 'Noto Naskh Arabic', serif;
         }
 
-        .about-text {
+        .about-hero-text {
+            font-size: 20px;
+            color: #00C897;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .about-description {
             font-size: 18px;
             line-height: 2;
             text-align: justify;
             opacity: 0.95;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 35px;
         }
 
-        .section-title {
-            font-size: 26px;
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 215, 0, 0.10);
+            border-radius: 20px;
+            padding: 25px 18px;
+            transition: 0.35s ease;
+            backdrop-filter: blur(4px);
+            text-align: center;
+        }
+
+        .about-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 215, 0, 0.3);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 215, 0, 0.04);
+        }
+
+        .about-card .icon {
+            font-size: 38px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .about-card h3 {
+            font-size: 22px;
             font-weight: 700;
             color: #FFD700;
-            margin: 30px 0 15px 0;
-            text-align: right;
+            margin-bottom: 10px;
             font-family: 'Noto Naskh Arabic', serif;
         }
 
-        .section-text {
-            font-size: 17px;
-            line-height: 2;
-            text-align: justify;
-            opacity: 0.9;
-            margin-bottom: 20px;
-            padding-right: 20px;
-            border-right: 3px solid #00C897;
+        .about-card p {
+            font-size: 16px;
+            line-height: 1.9;
+            opacity: 0.85;
+            color: #E0E8F0;
             font-weight: 400;
         }
 
+        .about-card .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            text-align: center;
+        }
+
+        .about-card .values-list li {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.08);
+            padding: 5px 14px;
+            margin: 4px 3px;
+            border-radius: 20px;
+            font-size: 15px;
+            color: #E0E8F0;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FFD700;
+            color: #0a1628;
+            padding: 14px 40px;
+            border-radius: 50px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            margin: 25px 0 15px 0;
+            transition: 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+            font-family: 'Noto Naskh Arabic', serif;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.03);
+            background: #FFE44D;
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.35);
+        }
+
+        .footer {
+            margin-top: 35px;
+            font-size: 14px;
+            opacity: 0.5;
+            letter-spacing: 1px;
+            color: #FFD700;
+        }
+
         .nav-links {
-            margin-top: 30px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -106,14 +186,6 @@
             border-bottom-color: #FFD700;
         }
 
-        .footer {
-            margin-top: 35px;
-            font-size: 14px;
-            opacity: 0.5;
-            letter-spacing: 1px;
-            color: #FFD700;
-        }
-
         .developer-credit {
             margin-top: 8px;
             font-size: 11px;
@@ -124,11 +196,13 @@
             font-family: 'Arial', sans-serif;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .container { padding: 30px 20px; }
-            h1 { font-size: 28px; }
+            .about-main-title { font-size: 32px; }
+            .about-hero-text { font-size: 18px; }
+            .cards-grid { grid-template-columns: 1fr; }
             .logo-container img { max-width: 120px; }
-            .section-text { padding-right: 10px; }
+            .cta-button { padding: 12px 30px; font-size: 18px; }
         }
     </style>
 </head>
@@ -139,27 +213,46 @@
         <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="Be In Stock Logo">
     </div>
 
-    <h1>🏢 من نحن</h1>
+    <div class="about-main-title">من نحن</div>
+    <div class="about-hero-text">شريكك الموثوق في عالم الاستثمار والأسواق المالية</div>
 
-    <div class="about-text">
-        <strong>شركة Be In Stock للأستشارات المالية</strong><br><br>
-        [Be In Stock] هي شركة رائدة في سوق الأوراق المالية، ملتزمة بتقديم خدمات وساطة مالية متميزة ومتكاملة.<br><br>
-        يضم فريقنا خبراء ماليون ذوو كفاءة عالية، يسعون جاهدين لمساعدة عملائنا على تحقيق أهدافهم المالية بثقة ونجاح. نحن نؤمن بأهمية بناء علاقات قوية ومستدامة مع عملائنا، ونسعى دائماً لتقديم خدمات تتجاوز توقعاتهم.وتضمن لهم تحقيق أهدافهم المالية بنجاح
+    <p class="about-description">
+        <strong>Bein Stock</strong> شركة متخصصة في الاستشارات المالية وتحليل الأسواق، نساعد المستثمرين والأفراد على فهم الأسواق واتخاذ قرارات استثمارية أكثر وعيًا، من خلال التحليل الاحترافي، والخبرة العملية، والرؤية المبنية على البيانات.
+    </p>
+
+    <div class="cards-grid">
+        <div class="about-card">
+            <span class="icon">🌟</span>
+            <h3>رؤيتنا</h3>
+            <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
+        </div>
+        <div class="about-card">
+            <span class="icon">📜</span>
+            <h3>رسالتنا</h3>
+            <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
+        </div>
+        <div class="about-card">
+            <span class="icon">💎</span>
+            <h3>قيمنا</h3>
+            <ul class="values-list">
+                <li>الثقة</li>
+                <li>الشفافية</li>
+                <li>الاحترافية</li>
+                <li>الابتكار</li>
+                <li>التركيز على العميل</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="section-title">🌟 رؤيتنا</div>
-    <div class="section-text">
-        "أن نكون الشريك الموثوق للأفراد والمؤسسات في تحقيق النجاح المالي، من خلال تقديم حلول متطورة وخبرة استثنائية . ."
-    </div>
+    <p style="font-size: 18px; line-height: 1.8; margin: 20px 0 10px 0; opacity: 0.9;">
+        <strong>نحو قرارات استثمارية أكثر ذكاءً... ومستقبل مالي أكثر استقرارًا.</strong><br>
+        اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>Bein Stock</strong> يرافقونك في رحلتك الاستثمارية بثقة.
+    </p>
 
-    <div class="section-title">🎯 أهدافنا</div>
-    <div class="section-text">
-        "تقديم خدمات مالية شاملة تساهم في تعزيز الثروة والاستقرار الاقتصادي، وتوفير الدعم والتوجيه لعملائنا لاتخاذ قرارات استثمارية صائبة، مع التزامنا الدائم بالنزاهة، والشفافية، والتميز."
-    </div>
+    <a href="#" class="cta-button">📞 تواصل معنا</a>
 
     <div class="nav-links">
         <a href="index.html">🏠 الرئيسية</a>
-        <a href="#">📞 تواصل معنا</a>
     </div>
 
     <div class="footer">© 2026 Be In Stock. جميع الحقوق محفوظة</div>
