@@ -123,32 +123,35 @@
             box-shadow: 0 12px 30px rgba(255, 215, 0, 0.4);
         }
 
-        .nav-links {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 16px;
-        }
-
-        .nav-links a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: 0.3s;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 4px;
-        }
-
-        .nav-links a:hover {
-            color: #ffd966;
-            border-bottom-color: #ffd966;
-        }
-
         .footer {
             margin-top: 35px;
             font-size: 14px;
             opacity: 0.5;
             letter-spacing: 1px;
+        }
+
+        /* ✅ تنسيق رابط "من نحن" في الأسفل */
+        .about-link {
+            display: block;
+            margin-top: 20px;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .about-link:hover {
+            color: #ffd966;
+        }
+
+        /* ✅ تنسيق سطر التطوير (بالانجليزية) */
+        .developer-credit {
+            margin-top: 8px;
+            font-size: 11px;
+            opacity: 0.3;
+            letter-spacing: 0.5px;
+            color: #ccc;
+            direction: ltr;
         }
 
         #msg {
@@ -164,7 +167,6 @@
             .container { padding: 40px 20px; }
             h1 { font-size: 28px; }
             .logo-container img { max-width: 140px; }
-            .nav-links { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -181,10 +183,6 @@
         كل ما تحتاجه للنجاح في سوق الأسهم السعودي و الأمريكي
     </p>
 
-    <div class="nav-links">
-        <a href="about.html">🏢 من نحن</a>
-    </div>
-
     <form id="leadForm" class="form-group">
         <input type="text" id="userName" placeholder="الإسم كاملاً" required>
         <input type="tel" id="userPhone" placeholder="رقم الجوال" required>
@@ -200,7 +198,15 @@
     </form>
 
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
+
+    <!-- ✅ رابط "من نحن" في الأسفل -->
+    <a href="about.html" class="about-link">🏢 من نحن</a>
+
+    <!-- ✅ الفوتر الرئيسي -->
     <div class="footer">© 2026 Be In Stock. جميع الحقوق محفوظة</div>
+
+    <!-- ✅ سطر التطوير بالانجليزية (تحت الفوتر) -->
+    <div class="developer-credit">Designed and Developed by Shady Taha</div>
 </div>
 
 <script>
@@ -216,7 +222,6 @@
         msgDiv.style.color = '#fff';
         msgDiv.innerText = 'جاري الإرسال...';
 
-        // ✅ تم تحديث الرابط السحري الجديد
         var scriptURL = 'https://script.google.com/macros/s/AKfycbwAEIzQu1X3Y_4JzTCPBih8bZT6PgD4SqIUcPA-Rt1DKbnw6ZQ3WXVJQzhHvtdv0SKA7g/exec';
 
         fetch(scriptURL, {
