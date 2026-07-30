@@ -37,7 +37,6 @@
             filter: drop-shadow(0 8px 20px rgba(91, 61, 245, 0.2));
         }
 
-        /* ✅ الكارت الأبيض الكريمي */
         .about-card {
             background: #FFFFFF;
             padding: 30px 24px;
@@ -77,7 +76,6 @@
             font-weight: 600;
         }
 
-        /* ✅ الأقسام (رؤيتنا - رسالتنا - قيمنا) */
         .about-card .sub-section {
             margin: 28px 0 10px 0;
         }
@@ -104,7 +102,6 @@
             font-weight: 400;
         }
 
-        /* ✅ القيم - Chips */
         .about-card .values-chips {
             display: flex;
             flex-wrap: wrap;
@@ -147,7 +144,7 @@
             font-weight: 600;
         }
 
-        /* ✅ الزر */
+        /* ✅ الزر أصبح رابطاً للصفحة الرئيسية + النموذج */
         .about-card .cta-link {
             display: inline-block;
             background: #5B3DF5;
@@ -170,7 +167,6 @@
             box-shadow: 0 12px 35px rgba(91, 61, 245, 0.3);
         }
 
-        /* ✅ روابط التنقل */
         .nav-links {
             margin-top: 18px;
             display: flex;
@@ -223,118 +219,38 @@
             font-weight: 400;
         }
 
-        /* ======================================== */
-        /* ✅ تحسينات خاصة بالهواتف (شاشات أقل من 600px) */
-        /* ======================================== */
         @media (max-width: 600px) {
             body { padding: 8px; }
-
-            .container {
-                padding: 18px 12px;
-                border-radius: 18px;
-            }
-
-            .logo-container img {
-                max-width: 110px;
-            }
-
-            .about-card {
-                padding: 22px 16px;
-                border-radius: 16px;
-                margin: 8px 0 16px 0;
-            }
-
-            .about-card .about-title {
-                font-size: 28px;
-            }
-
-            .about-card .about-subtitle {
-                font-size: 15px;
-                margin-bottom: 14px;
-            }
-
-            .about-card .about-text {
-                font-size: 15px;
-                line-height: 1.9;
-                margin-bottom: 16px;
-            }
-
-            .about-card .sub-section {
-                margin: 22px 0 6px 0;
-            }
-
-            .about-card .sub-section .section-icon {
-                font-size: 24px;
-            }
-
-            .about-card .sub-section h3 {
-                font-size: 18px;
-            }
-
-            .about-card .sub-section p {
-                font-size: 14px;
-                line-height: 1.8;
-            }
-
-            .about-card .values-chips {
-                gap: 8px;
-                margin: 10px 0 12px 0;
-            }
-
-            .about-card .values-chips .chip {
-                font-size: 13px;
-                padding: 5px 14px;
-            }
-
-            .about-card .closing-text {
-                font-size: 15px;
-                line-height: 1.7;
-                margin: 10px 0 14px 0;
-            }
-
-            .about-card .cta-link {
-                padding: 10px 26px;
-                font-size: 15px;
-            }
-
-            .nav-links {
-                font-size: 14px;
-                gap: 14px;
-                margin-top: 14px;
-            }
-
-            .footer {
-                font-size: 12px;
-                margin-top: 20px;
-            }
-
-            .developer-credit {
-                font-size: 9px;
-            }
+            .container { padding: 18px 12px; border-radius: 18px; }
+            .logo-container img { max-width: 110px; }
+            .about-card { padding: 22px 16px; border-radius: 16px; margin: 8px 0 16px 0; }
+            .about-card .about-title { font-size: 28px; }
+            .about-card .about-subtitle { font-size: 15px; margin-bottom: 14px; }
+            .about-card .about-text { font-size: 15px; line-height: 1.9; margin-bottom: 16px; }
+            .about-card .sub-section { margin: 22px 0 6px 0; }
+            .about-card .sub-section .section-icon { font-size: 24px; }
+            .about-card .sub-section h3 { font-size: 18px; }
+            .about-card .sub-section p { font-size: 14px; line-height: 1.8; }
+            .about-card .values-chips { gap: 8px; margin: 10px 0 12px 0; }
+            .about-card .values-chips .chip { font-size: 13px; padding: 5px 14px; }
+            .about-card .closing-text { font-size: 15px; line-height: 1.7; margin: 10px 0 14px 0; }
+            .about-card .cta-link { padding: 10px 26px; font-size: 15px; }
+            .nav-links { font-size: 14px; gap: 14px; margin-top: 14px; }
+            .footer { font-size: 12px; margin-top: 20px; }
+            .developer-credit { font-size: 9px; }
         }
 
-        /* ✅ تحسينات للشاشات الصغيرة جداً (أقل من 400px) */
         @media (max-width: 400px) {
             .container { padding: 14px 8px; }
-
             .about-card { padding: 18px 12px; }
-
             .about-card .about-title { font-size: 24px; }
-
             .about-card .about-subtitle { font-size: 14px; }
-
             .about-card .about-text { font-size: 14px; }
-
             .about-card .sub-section h3 { font-size: 16px; }
-
             .about-card .sub-section p { font-size: 13px; }
-
             .about-card .values-chips .chip { font-size: 12px; padding: 4px 12px; }
-
             .about-card .closing-text { font-size: 14px; }
-
             .about-card .cta-link { font-size: 14px; padding: 8px 22px; }
-
             .nav-links { font-size: 13px; gap: 10px; }
         }
     </style>
@@ -346,7 +262,6 @@
         <img src="https://i.postimg.cc/5XDLCRCC/tsmym-bdwn-nwan.png" alt="BE IN STOCK Logo">
     </div>
 
-    <!-- ✅ الكارت الأبيض الكريمي -->
     <div class="about-card">
         <div class="about-title">من نحن</div>
         <div class="about-subtitle">خبرة تقود استثمارك بثقة</div>
@@ -356,21 +271,18 @@
             نساعد المستثمرين على اتخاذ قرارات أكثر وعيًا من خلال التحليل الاحترافي والخبرة العملية.
         </p>
 
-        <!-- رؤيتنا -->
         <div class="sub-section">
             <div class="section-icon">👁️</div>
             <h3>رؤيتنا</h3>
             <p>أن نكون المرجع الموثوق في الاستشارات المالية وتحليل الأسواق، وأن نمكّن عملاءنا من بناء قرارات استثمارية ناجحة ومستدامة.</p>
         </div>
 
-        <!-- رسالتنا -->
         <div class="sub-section">
             <div class="section-icon">🎯</div>
             <h3>رسالتنا</h3>
             <p>تقديم استشارات مالية احترافية ورؤى تحليلية دقيقة، مع الالتزام بالشفافية والمصداقية، لمساعدة عملائنا على اغتنام الفرص وإدارة المخاطر بثقة.</p>
         </div>
 
-        <!-- قيمنا - Chips -->
         <div class="sub-section">
             <div class="section-icon">💎</div>
             <h3>قيمنا</h3>
@@ -387,7 +299,8 @@
             اكتشف خدماتنا أو تواصل معنا اليوم، ودع خبراء <strong>BE IN STOCK</strong> يرافقونك في رحلتك الاستثمارية بثقة.
         </div>
 
-        <a href="#" class="cta-link">📞 تواصل معنا</a>
+        <!-- ✅ الزر الآن يودي للصفحة الرئيسية ونموذج التسجيل -->
+        <a href="index.html#leadForm" class="cta-link">📞 تواصل معنا</a>
     </div>
 
     <div class="nav-links">
