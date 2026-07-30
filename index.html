@@ -342,7 +342,7 @@
         احصل على <strong>توصية مجانية</strong> من فريق متخصص في الأسواق السعودية والأمريكية.
     </div>
 
-    <!-- ✅ نموذج التسجيل مع حقل "كود الدعوة" -->
+    <!-- ✅ نموذج التسجيل (مع ID = leadForm) -->
     <form id="leadForm" class="form-group">
         <input type="text" id="userName" placeholder="👤 الاسم" required>
         <input type="tel" id="userPhone" placeholder="📱 رقم الجوال" required>
@@ -352,7 +352,6 @@
             <option value="أمريكي">🇺🇸 الأمريكي</option>
             <option value="كليهما">🌍 كلاهما</option>
         </select>
-        <!-- ✅ حقل كود الدعوة (اختياري) -->
         <input type="text" id="userReferral" placeholder="🏷️ كود الدعوة (اختياري)">
         <button type="submit">🚀 احصل على توصيتك المجانية</button>
     </form>
@@ -391,21 +390,24 @@
 </div>
 
 <script>
+    // =============================================
+    // 1. كود إرسال البيانات إلى شيت جوجل
+    // =============================================
     document.getElementById('leadForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
         var name = document.getElementById('userName').value;
         var phone = document.getElementById('userPhone').value;
         var market = document.getElementById('userMarket').value;
-        var referral = document.getElementById('userReferral').value; // ✅ قراءة كود الدعوة
-
+        var referral = document.getElementById('userReferral').value;
         var msgDiv = document.getElementById('msg');
 
         msgDiv.style.display = 'block';
         msgDiv.style.color = '#CBD5E1';
         msgDiv.innerText = 'جاري الإرسال...';
 
-        var scriptURL = 'https://script.google.com/macros/s/AKfycbyRECdQbOa3ZEGwWrmu4iqvyCLYeZJ7O5pZn_K-8StRZN3tlQ_oMO0d7KRoLs2mCmYUdg/exec';
+        // ⚠️ تأكد من أن هذا الرابط هو الرابط الصحيح لـ Apps Script الخاص بك
+        var scriptURL = 'https://script.google.com/macros/s/AKfycbwAEIzQu1X3Y_4JzTCPBih8bZT6PgD4SqIUcPA-Rt1DKbnw6ZQ3WXVJQzhHvtdv0SKA7g/exec';
 
         fetch(scriptURL, {
             method: 'POST',
@@ -415,7 +417,7 @@
                 name: name, 
                 phone: phone, 
                 market: market,
-                referral: referral  // ✅ إرسال كود الدعوة
+                referral: referral
             })
         })
         .then(() => {
@@ -430,6 +432,21 @@
             msgDiv.innerText = '❌ حصل خطأ، حاول مرة أخرى.';
             console.error('Error!', error.message);
         });
+    });
+
+    // =============================================
+    // 2. ✅ كود التمرير التلقائي للنموذج (جديد)
+    //    لو دخل المستخدم من رابط index.html#leadForm
+    // =============================================
+    window.addEventListener('load', function() {
+        if (window.location.hash === '#leadForm') {
+            setTimeout(function() {
+                var form = document.getElementById('leadForm');
+                if (form) {
+                    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 300);
+        }
     });
 </script>
 
