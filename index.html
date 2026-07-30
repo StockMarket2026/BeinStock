@@ -82,6 +82,7 @@
             margin-top: 16px;
         }
 
+        /* ✅ تنسيق عام للحقول (بدون سهم) */
         .form-group input, .form-group select {
             padding: 14px 16px;
             border: 1.5px solid #2A3550;
@@ -96,6 +97,10 @@
             font-weight: 400;
             appearance: none;
             -webkit-appearance: none;
+        }
+
+        /* ✅ إضافة السهم فقط لحقل الـ select (السوق) */
+        .form-group select {
             background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23F5C84C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
             background-repeat: no-repeat;
             background-position: left 14px center;
@@ -294,7 +299,9 @@
             .main-subtitle { font-size: 14px; }
             .intro-text { font-size: 15px; line-height: 1.8; margin: 10px 0 18px 0; }
             .form-group { gap: 10px; margin-top: 12px; }
-            .form-group input, .form-group select { padding: 12px 14px; font-size: 14px; border-radius: 10px; background-position: left 12px center; background-size: 12px; }
+            .form-group input, .form-group select { padding: 12px 14px; font-size: 14px; border-radius: 10px; }
+            /* تعديل مكان السهم في الموبايل */
+            .form-group select { background-position: left 12px center; background-size: 12px; }
             .form-group button { padding: 14px; font-size: 16px; height: 48px; border-radius: 10px; }
             #msg { font-size: 14px; padding: 8px 12px; }
             .why-section { margin: 28px 0 20px 0; }
@@ -318,6 +325,7 @@
             .main-subtitle { font-size: 13px; }
             .intro-text { font-size: 14px; }
             .form-group input, .form-group select { font-size: 13px; padding: 10px 12px; }
+            .form-group select { background-position: left 10px center; background-size: 12px; }
             .form-group button { font-size: 15px; height: 44px; padding: 12px; }
             .why-title { font-size: 20px; }
             .why-item p { font-size: 13px; }
@@ -342,16 +350,19 @@
         احصل على <strong>توصية مجانية</strong> من فريق متخصص في الأسواق السعودية والأمريكية.
     </div>
 
-    <!-- ✅ نموذج التسجيل (مع ID = leadForm) -->
+    <!-- ✅ نموذج التسجيل -->
     <form id="leadForm" class="form-group">
         <input type="text" id="userName" placeholder="👤 الاسم" required>
         <input type="tel" id="userPhone" placeholder="📱 رقم الجوال" required>
+        
+        <!-- ✅ حقل السوق (الوحيد اللي فيه سهم) -->
         <select id="userMarket" required>
             <option value="" disabled selected>📈 السوق</option>
             <option value="سعودي">🇸🇦 السعودي</option>
             <option value="أمريكي">🇺🇸 الأمريكي</option>
             <option value="كليهما">🌍 كلاهما</option>
         </select>
+        
         <input type="text" id="userReferral" placeholder="🏷️ كود الدعوة (اختياري)">
         <button type="submit">🚀 احصل على توصيتك المجانية</button>
     </form>
@@ -390,9 +401,6 @@
 </div>
 
 <script>
-    // =============================================
-    // 1. كود إرسال البيانات إلى شيت جوجل
-    // =============================================
     document.getElementById('leadForm').addEventListener('submit', function(e) {
         e.preventDefault();
 
@@ -406,7 +414,6 @@
         msgDiv.style.color = '#CBD5E1';
         msgDiv.innerText = 'جاري الإرسال...';
 
-        // ⚠️ تأكد من أن هذا الرابط هو الرابط الصحيح لـ Apps Script الخاص بك
         var scriptURL = 'https://script.google.com/macros/s/AKfycbwAEIzQu1X3Y_4JzTCPBih8bZT6PgD4SqIUcPA-Rt1DKbnw6ZQ3WXVJQzhHvtdv0SKA7g/exec';
 
         fetch(scriptURL, {
@@ -434,10 +441,7 @@
         });
     });
 
-    // =============================================
-    // 2. ✅ كود التمرير التلقائي للنموذج (جديد)
-    //    لو دخل المستخدم من رابط index.html#leadForm
-    // =============================================
+    // ✅ كود التمرير التلقائي للنموذج لو جاي من "تواصل معنا"
     window.addEventListener('load', function() {
         if (window.location.hash === '#leadForm') {
             setTimeout(function() {
