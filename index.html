@@ -29,7 +29,6 @@
             border: 1px solid #2A3550;
         }
 
-        /* ✅ تحسين المسافات للشاشات الصغيرة */
         .logo-container { margin-bottom: 8px; }
         .logo-container img {
             max-width: 140px;
@@ -75,7 +74,7 @@
             font-weight: 600;
         }
 
-        /* ✅ نموذج التسجيل - محسّن للموبايل */
+        /* ✅ نموذج التسجيل */
         .form-group {
             display: flex;
             flex-direction: column;
@@ -150,7 +149,6 @@
             color: #2EDB73;
         }
 
-        /* ✅ قسم "لماذا BE IN STOCK؟" - أسطر تحت بعض */
         .why-section {
             margin: 35px 0 25px 0;
             text-align: right;
@@ -221,7 +219,6 @@
             line-height: 1.5;
         }
 
-        /* ✅ مربع "من نحن" الرابط */
         .about-box-link {
             background: #1A2438;
             border: 1.5px solid #2A3550;
@@ -289,152 +286,41 @@
             font-weight: 400;
         }
 
-        /* ======================================== */
-        /* ✅ تحسينات خاصة بالهواتف (شاشات أقل من 600px) */
-        /* ======================================== */
         @media (max-width: 600px) {
             body { padding: 8px; }
-
-            .container {
-                padding: 20px 14px;
-                border-radius: 20px;
-            }
-
-            .logo-container img {
-                max-width: 110px;
-            }
-
-            h1 {
-                font-size: 30px;
-                letter-spacing: 0.5px;
-            }
-
-            .main-subtitle {
-                font-size: 14px;
-                letter-spacing: 0.3px;
-            }
-
-            .intro-text {
-                font-size: 15px;
-                line-height: 1.8;
-                margin: 10px 0 18px 0;
-            }
-
-            /* ✅ تحسين الفورم للهواتف */
-            .form-group {
-                gap: 10px;
-                margin-top: 12px;
-            }
-
-            .form-group input, .form-group select {
-                padding: 12px 14px;
-                font-size: 14px;
-                border-radius: 10px;
-                background-position: left 12px center;
-                background-size: 12px;
-            }
-
-            .form-group button {
-                padding: 14px;
-                font-size: 16px;
-                height: 48px;
-                border-radius: 10px;
-            }
-
-            #msg {
-                font-size: 14px;
-                padding: 8px 12px;
-            }
-
-            /* ✅ قسم "لماذا" للهواتف */
-            .why-section {
-                margin: 28px 0 20px 0;
-            }
-
-            .why-title {
-                font-size: 22px;
-                margin-bottom: 14px;
-            }
-
-            .why-title::after {
-                width: 50%;
-                height: 2px;
-                margin-top: 6px;
-            }
-
-            .why-list {
-                gap: 8px;
-                padding: 0 2px;
-            }
-
-            .why-item {
-                padding: 8px 12px;
-                gap: 10px;
-                border-radius: 10px;
-            }
-
-            .why-item .icon {
-                font-size: 20px;
-                min-width: 24px;
-            }
-
-            .why-item p {
-                font-size: 14px;
-            }
-
-            /* ✅ مربع "من نحن" للهواتف */
-            .about-box-link {
-                padding: 12px 16px;
-                border-radius: 12px;
-                margin: 16px 0 10px 0;
-            }
-
-            .about-box-link .about-text {
-                font-size: 16px;
-            }
-
-            .about-box-link .about-sub {
-                font-size: 12px;
-            }
-
-            .footer {
-                font-size: 12px;
-                margin-top: 24px;
-            }
-
-            .developer-credit {
-                font-size: 9px;
-                margin-top: 4px;
-            }
+            .container { padding: 20px 14px; border-radius: 20px; }
+            .logo-container img { max-width: 110px; }
+            h1 { font-size: 30px; }
+            .main-subtitle { font-size: 14px; }
+            .intro-text { font-size: 15px; line-height: 1.8; margin: 10px 0 18px 0; }
+            .form-group { gap: 10px; margin-top: 12px; }
+            .form-group input, .form-group select { padding: 12px 14px; font-size: 14px; border-radius: 10px; background-position: left 12px center; background-size: 12px; }
+            .form-group button { padding: 14px; font-size: 16px; height: 48px; border-radius: 10px; }
+            #msg { font-size: 14px; padding: 8px 12px; }
+            .why-section { margin: 28px 0 20px 0; }
+            .why-title { font-size: 22px; margin-bottom: 14px; }
+            .why-title::after { width: 50%; height: 2px; margin-top: 6px; }
+            .why-list { gap: 8px; padding: 0 2px; }
+            .why-item { padding: 8px 12px; gap: 10px; border-radius: 10px; }
+            .why-item .icon { font-size: 20px; min-width: 24px; }
+            .why-item p { font-size: 14px; }
+            .about-box-link { padding: 12px 16px; border-radius: 12px; margin: 16px 0 10px 0; }
+            .about-box-link .about-text { font-size: 16px; }
+            .about-box-link .about-sub { font-size: 12px; }
+            .footer { font-size: 12px; margin-top: 24px; }
+            .developer-credit { font-size: 9px; margin-top: 4px; }
         }
 
-        /* ✅ تحسينات للشاشات الصغيرة جداً (أقل من 400px) */
         @media (max-width: 400px) {
             .container { padding: 16px 10px; }
-
             h1 { font-size: 26px; }
-
             .logo-container img { max-width: 95px; }
-
             .main-subtitle { font-size: 13px; }
-
             .intro-text { font-size: 14px; }
-
-            .form-group input, .form-group select {
-                font-size: 13px;
-                padding: 10px 12px;
-            }
-
-            .form-group button {
-                font-size: 15px;
-                height: 44px;
-                padding: 12px;
-            }
-
+            .form-group input, .form-group select { font-size: 13px; padding: 10px 12px; }
+            .form-group button { font-size: 15px; height: 44px; padding: 12px; }
             .why-title { font-size: 20px; }
-
             .why-item p { font-size: 13px; }
-
             .about-box-link .about-text { font-size: 15px; }
         }
     </style>
@@ -456,7 +342,7 @@
         احصل على <strong>توصية مجانية</strong> من فريق متخصص في الأسواق السعودية والأمريكية.
     </div>
 
-    <!-- ✅ نموذج التسجيل -->
+    <!-- ✅ نموذج التسجيل مع حقل "كود الدعوة" -->
     <form id="leadForm" class="form-group">
         <input type="text" id="userName" placeholder="👤 الاسم" required>
         <input type="tel" id="userPhone" placeholder="📱 رقم الجوال" required>
@@ -466,12 +352,13 @@
             <option value="أمريكي">🇺🇸 الأمريكي</option>
             <option value="كليهما">🌍 كلاهما</option>
         </select>
+        <!-- ✅ حقل كود الدعوة (اختياري) -->
+        <input type="text" id="userReferral" placeholder="🏷️ كود الدعوة (اختياري)">
         <button type="submit">🚀 احصل على توصيتك المجانية</button>
     </form>
 
     <p id="msg">✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.</p>
 
-    <!-- ✅ قسم "لماذا BE IN STOCK؟" -->
     <div class="why-section">
         <div class="why-title">لماذا BE IN STOCK؟</div>
         <div class="why-list">
@@ -494,7 +381,6 @@
         </div>
     </div>
 
-    <!-- ✅ مربع "من نحن" الرابط -->
     <a href="about.html" class="about-box-link">
         <div class="about-text">🏢 <span class="highlight-purple">من نحن</span></div>
         <div class="about-sub">تعرف على شركتنا وفريقنا ورؤيتنا</div>
@@ -511,6 +397,8 @@
         var name = document.getElementById('userName').value;
         var phone = document.getElementById('userPhone').value;
         var market = document.getElementById('userMarket').value;
+        var referral = document.getElementById('userReferral').value; // ✅ قراءة كود الدعوة
+
         var msgDiv = document.getElementById('msg');
 
         msgDiv.style.display = 'block';
@@ -523,7 +411,12 @@
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: name, phone: phone, market: market })
+            body: JSON.stringify({ 
+                name: name, 
+                phone: phone, 
+                market: market,
+                referral: referral  // ✅ إرسال كود الدعوة
+            })
         })
         .then(() => {
             msgDiv.style.display = 'block';
