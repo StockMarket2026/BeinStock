@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BE IN STOCK | استشارات استثمارية</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -34,11 +37,12 @@
             min-height: 100vh;
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .en { font-family: 'Space Grotesk', sans-serif; }
 
-        /* ========== الشريط العلوي ========== */
+        /* الشريط العلوي */
         .top-bar {
             background: var(--navy);
             color: var(--white);
@@ -49,17 +53,14 @@
             letter-spacing: 0.3px;
         }
 
-        .top-bar .highlight {
-            color: var(--green-light);
-            font-weight: 700;
-        }
+        .top-bar .highlight { color: var(--green-light); font-weight: 700; }
 
-        /* ========== الهيدر ========== */
+        /* الهيدر */
         .site-header {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(250, 251, 252, 0.85);
+            background: rgba(250, 251, 252, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
@@ -68,7 +69,7 @@
         .header-inner {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 32px;
+            padding: 12px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -82,8 +83,9 @@
         }
 
         .logo-header img {
-            height: 60px;
+            height: 80px;
             width: auto;
+            max-height: 80px;
             object-fit: contain;
         }
 
@@ -102,27 +104,29 @@
         }
 
         .header-nav .nav-cta {
-            padding: 10px 22px;
+            padding: 12px 24px;
             background: var(--navy);
             color: var(--white);
             border-radius: 10px;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
         }
 
-        /* ========== الحاوية ========== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
-        /* ========== Hero ========== */
+        /* Hero */
         .hero {
             padding: 80px 0 100px;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
 
         .hero::before {
@@ -136,6 +140,7 @@
             border-radius: 50%;
             filter: blur(60px);
             pointer-events: none;
+            z-index: 0;
         }
 
         .hero::after {
@@ -149,6 +154,7 @@
             border-radius: 50%;
             filter: blur(60px);
             pointer-events: none;
+            z-index: 0;
         }
 
         .hero-grid {
@@ -258,9 +264,7 @@
             border-top: 1px solid var(--border);
         }
 
-        .hero-stat {
-            text-align: center;
-        }
+        .hero-stat { text-align: center; }
 
         .hero-stat .num {
             font-size: 32px;
@@ -285,24 +289,25 @@
             font-weight: 500;
         }
 
-        /* الشعار */
         .hero-visual {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 60px 40px;
         }
 
         .hero-logo-card {
             position: relative;
             background: var(--white);
             border-radius: 32px;
-            padding: 40px 30px;
+            padding: 50px 40px;
             box-shadow:
                 0 30px 60px rgba(30, 58, 95, 0.12),
                 0 0 0 1px var(--border);
             transform: rotate(-3deg);
             transition: transform 0.5s;
+            z-index: 5;
         }
 
         .hero-logo-card img {
@@ -316,24 +321,24 @@
             background: var(--white);
             border-radius: 16px;
             padding: 12px 16px;
-            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.12);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.15);
             display: flex;
             align-items: center;
             gap: 10px;
             border: 1px solid var(--border);
             z-index: 10;
-            max-width: 180px;
+            white-space: nowrap;
         }
 
         .float-card.fc-1 {
             top: 0;
-            right: -20px;
+            right: 0;
             animation: float1 4s ease-in-out infinite;
         }
 
         .float-card.fc-2 {
-            bottom: 20px;
-            left: -20px;
+            bottom: 0;
+            left: 0;
             animation: float2 5s ease-in-out infinite;
         }
 
@@ -360,9 +365,7 @@
         .float-card .fc-icon.g { background: var(--green-bg); color: var(--green); }
         .float-card .fc-icon.p { background: var(--purple-bg); color: var(--purple); }
 
-        .float-card .fc-text {
-            text-align: right;
-        }
+        .float-card .fc-text { text-align: right; }
 
         .float-card .fc-title {
             font-size: 14px;
@@ -376,10 +379,8 @@
             color: var(--text-muted);
         }
 
-        /* ========== الفورم ========== */
-        .form-section {
-            padding: 40px 0 100px;
-        }
+        /* الفورم */
+        .form-section { padding: 40px 0 100px; }
 
         .form-box {
             background: var(--white);
@@ -459,9 +460,7 @@
             gap: 8px;
         }
 
-        .form-field.full {
-            grid-column: span 2;
-        }
+        .form-field.full { grid-column: span 2; }
 
         .form-field label {
             font-size: 13px;
@@ -490,9 +489,7 @@
             width: 100%;
         }
 
-        .form-field input::placeholder {
-            color: var(--text-muted);
-        }
+        .form-field input::placeholder { color: var(--text-muted); }
 
         .form-field input:focus,
         .form-field select:focus {
@@ -533,24 +530,6 @@
             overflow: hidden;
         }
 
-        .form-submit::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.7s;
-        }
-
-        .form-submit:hover::before {
-            transform: translateX(100%);
-        }
-
-        .form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 45px rgba(123, 92, 231, 0.4);
-        }
-
         .form-submit:disabled {
             opacity: 0.7;
             cursor: wait;
@@ -579,10 +558,8 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ========== المميزات - Bento Grid ========== */
-        .features-section {
-            padding: 60px 0 100px;
-        }
+        /* المميزات */
+        .features-section { padding: 60px 0 100px; }
 
         .section-header {
             text-align: center;
@@ -650,10 +627,7 @@
             flex-shrink: 0;
         }
 
-        .bento-icon svg {
-            width: 22px;
-            height: 22px;
-        }
+        .bento-icon svg { width: 22px; height: 22px; }
 
         .bento-icon.p { background: var(--purple-bg); color: var(--purple); }
         .bento-icon.g { background: var(--green-bg); color: var(--green); }
@@ -715,10 +689,8 @@
             margin-bottom: 12px;
         }
 
-        /* ========== شريط CTA ========== */
-        .cta-section {
-            padding: 0 0 100px;
-        }
+        /* CTA */
+        .cta-section { padding: 0 0 100px; }
 
         .cta-box {
             background: linear-gradient(135deg, var(--navy) 0%, #2D4A7C 100%);
@@ -751,10 +723,7 @@
             border-radius: 50%;
         }
 
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
+        .cta-content { position: relative; z-index: 1; }
 
         .cta-box h2 {
             font-size: 36px;
@@ -787,7 +756,7 @@
             transition: all 0.3s;
         }
 
-        /* ========== الفوتر ========== */
+        /* الفوتر */
         .site-footer {
             background: var(--navy);
             color: rgba(255, 255, 255, 0.75);
@@ -821,23 +790,14 @@
             letter-spacing: 0.5px;
         }
 
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
 
         .footer-col ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--green-light);
         }
 
         .footer-socials {
@@ -878,8 +838,10 @@
             letter-spacing: 0.5px;
         }
 
-        /* ========== تأثيرات Hover (للكمبيوتر بس) ========== */
-        @media (hover: hover) {
+        /* ============================================ */
+        /* تأثيرات Hover - فقط للأجهزة اللي فيها ماوس حقيقي */
+        /* ============================================ */
+        @media (hover: hover) and (pointer: fine) {
             .header-nav a:hover { color: var(--purple); }
             .header-nav .nav-cta:hover {
                 background: var(--purple);
@@ -909,19 +871,39 @@
                 color: var(--white);
                 transform: translateY(-4px);
             }
+            .form-submit:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 20px 45px rgba(123, 92, 231, 0.4);
+            }
         }
 
-        /* تأثير اللمس للموبايل */
+        /* تأثير اللمس على الموبايل */
         .nav-cta:active,
         .btn-primary:active,
         .btn-secondary:active,
         .form-submit:active,
-        .cta-box .btn-white:active {
-            transform: scale(0.97);
-            opacity: 0.9;
+        .cta-box .btn-white:active,
+        .footer-socials a:active {
+            transform: scale(0.96);
+            opacity: 0.85;
+            transition: transform 0.1s, opacity 0.1s;
         }
 
-        /* ========== التجاوب ========== */
+        /* إزالة تأثير hover من الأجهزة اللمسية */
+        @media (hover: none) {
+            .header-nav a:hover,
+            .header-nav .nav-cta:hover,
+            .btn-primary:hover,
+            .btn-secondary:hover,
+            .bento-card:hover,
+            .cta-box .btn-white:hover,
+            .footer-socials a:hover,
+            .form-submit:hover {
+                transform: none;
+            }
+        }
+
+        /* التجاوب */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 44px; }
             .section-header h2 { font-size: 36px; }
@@ -932,49 +914,53 @@
         }
 
         @media (max-width: 768px) {
-            .header-inner { padding: 14px 20px; }
-            .logo-header img { height: 46px; }
+            .header-inner { padding: 12px 20px; }
+            .logo-header img { height: 65px; max-height: 65px; }
             .header-nav { gap: 16px; }
             .header-nav a:not(.nav-cta) { display: none; }
             .container { padding: 0 20px; }
-            .hero { padding: 50px 0 60px; }
-            .hero-grid { grid-template-columns: 1fr; gap: 50px; }
-            .hero h1 { font-size: 36px; letter-spacing: -1px; }
+            .hero { padding: 40px 0 50px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero h1 { font-size: 34px; letter-spacing: -1px; }
             .hero p { font-size: 16px; }
-            .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+            .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; padding-top: 24px; }
             .hero-stat .num { font-size: 24px; }
             .hero-stat .lbl { font-size: 11px; }
-            .hero-visual { order: -1; }
-            .hero-logo-card { padding: 30px 24px; }
-            .hero-logo-card img { max-width: 150px; }
-            .float-card { padding: 10px 14px; max-width: 150px; }
+            .hero-visual { order: -1; padding: 30px 20px; }
+            .hero-logo-card { padding: 30px 24px; border-radius: 24px; }
+            .hero-logo-card img { max-width: 140px; }
+            .float-card { padding: 8px 12px; }
             .float-card.fc-1 { right: -10px; top: -10px; }
-            .float-card.fc-2 { left: -10px; bottom: 10px; }
+            .float-card.fc-2 { left: -10px; bottom: -10px; }
             .float-card .fc-icon { width: 32px; height: 32px; font-size: 16px; }
             .float-card .fc-title { font-size: 12px; }
             .float-card .fc-sub { font-size: 10px; }
 
-            .form-box { padding: 32px 24px; border-radius: 20px; }
-            .form-header h2 { font-size: 26px; }
-            .form-grid { grid-template-columns: 1fr; }
+            .form-section { padding: 30px 0 60px; }
+            .form-box { padding: 30px 20px; border-radius: 20px; }
+            .form-header { margin-bottom: 24px; }
+            .form-header h2 { font-size: 24px; }
+            .form-header p { font-size: 14px; }
+            .form-grid { grid-template-columns: 1fr; gap: 14px; }
             .form-field.full { grid-column: span 1; }
             .form-submit { grid-column: span 1; font-size: 15px; padding: 16px; }
 
             .features-section { padding: 40px 0 60px; }
-            .section-header { margin-bottom: 40px; }
-            .section-header h2 { font-size: 28px; }
-            .section-header p { font-size: 15px; }
-            .bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 14px; }
+            .section-header { margin-bottom: 32px; }
+            .section-header h2 { font-size: 26px; }
+            .section-header p { font-size: 14px; }
+            .bento-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 12px; }
             .bento-card.b-large,
             .bento-card.b-medium,
-            .bento-card.b-small { grid-column: span 1; grid-row: auto; padding: 22px; }
-            .b-large .big-number { font-size: 54px; }
-            .b-large .bento-content h3 { font-size: 22px; }
+            .bento-card.b-small { grid-column: span 1; grid-row: auto; padding: 20px; }
+            .b-large .big-number { font-size: 48px; }
+            .b-large .bento-content h3 { font-size: 20px; }
 
             .cta-section { padding: 0 0 60px; }
             .cta-box { padding: 40px 24px; border-radius: 20px; }
-            .cta-box h2 { font-size: 26px; }
+            .cta-box h2 { font-size: 24px; }
             .cta-box p { font-size: 15px; }
+            .cta-box .btn-white { padding: 14px 26px; font-size: 15px; }
 
             .site-footer { padding: 40px 0 24px; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
@@ -982,22 +968,28 @@
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 30px; }
-            .form-box { padding: 24px 18px; }
-            .form-header h2 { font-size: 22px; }
-            .section-header h2 { font-size: 24px; }
-            .cta-box h2 { font-size: 22px; }
+            .hero h1 { font-size: 28px; }
+            .hero-badge { font-size: 11px; padding: 6px 12px; }
+            .hero-ctas { flex-direction: column; }
+            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+            .hero-stats { grid-template-columns: repeat(3, 1fr); }
+            .hero-stat .num { font-size: 20px; }
+            .hero-stat .lbl { font-size: 10px; }
+            .form-box { padding: 24px 16px; }
+            .form-header h2 { font-size: 20px; }
+            .section-header h2 { font-size: 22px; }
+            .cta-box h2 { font-size: 20px; }
+            .float-card.fc-1 { right: 0; top: -15px; }
+            .float-card.fc-2 { left: 0; bottom: -15px; }
         }
     </style>
 </head>
 <body>
 
-<!-- الشريط العلوي -->
 <div class="top-bar">
     🎉 عرض خاص: احصل على <span class="highlight">توصية مجانية</span> اليوم مع خبرائنا المعتمدين
 </div>
 
-<!-- الهيدر -->
 <header class="site-header">
     <div class="header-inner">
         <a href="index.html" class="logo-header">
@@ -1012,7 +1004,6 @@
 
 <div class="container">
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-grid">
             <div class="hero-content">
@@ -1057,7 +1048,6 @@
                 </div>
             </div>
 
-            <!-- الشعار -->
             <div class="hero-visual">
                 <div class="hero-logo-card">
                     <img src="logo.png" alt="BE IN STOCK">
@@ -1082,7 +1072,6 @@
         </div>
     </section>
 
-    <!-- الفورم -->
     <section class="form-section" id="leadForm">
         <div class="form-box">
             <div class="form-header">
@@ -1137,7 +1126,6 @@
         </div>
     </section>
 
-    <!-- المميزات - Bento Grid -->
     <section class="features-section">
         <div class="section-header">
             <span class="eyebrow">لماذا نحن</span>
@@ -1147,7 +1135,6 @@
 
         <div class="bento-grid">
 
-            <!-- بطاقة كبيرة -->
             <div class="bento-card b-large">
                 <div class="bento-content">
                     <div class="bento-row">
@@ -1164,7 +1151,6 @@
                 </div>
             </div>
 
-            <!-- بطاقة متوسطة -->
             <div class="bento-card b-medium">
                 <div class="bento-content">
                     <div class="bento-row">
@@ -1181,7 +1167,6 @@
                 </div>
             </div>
 
-            <!-- بطاقة متوسطة -->
             <div class="bento-card b-medium">
                 <div class="bento-content">
                     <div class="bento-row">
@@ -1198,7 +1183,6 @@
                 </div>
             </div>
 
-            <!-- بطاقة صغيرة -->
             <div class="bento-card b-small">
                 <div class="bento-content">
                     <div class="bento-row">
@@ -1214,7 +1198,6 @@
                 </div>
             </div>
 
-            <!-- بطاقة صغيرة -->
             <div class="bento-card b-small">
                 <div class="bento-content">
                     <div class="bento-row">
@@ -1232,7 +1215,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="cta-section">
         <div class="cta-box">
             <div class="cta-content">
@@ -1251,7 +1233,6 @@
 
 </div>
 
-<!-- الفوتر -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
@@ -1301,7 +1282,6 @@
 </footer>
 
 <script>
-    // عداد الأرقام
     function animateNumber(el) {
         var target = parseInt(el.getAttribute('data-target'));
         var duration = 2000;
@@ -1336,7 +1316,6 @@
         observer.observe(el);
     });
 
-    // إرسال الفورم
     var leadForm = document.getElementById('leadFormEl');
     var hiddenFrame = document.getElementById('hiddenFrame');
     var msgDiv = document.getElementById('msg');
@@ -1387,7 +1366,7 @@
                 msgDiv.style.color = '#22C55E';
                 msgDiv.style.background = '#F0FDF4';
                 msgDiv.style.borderColor = '#BBF7D0';
-                msgDiv.innerText = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً。';
+                msgDiv.innerText = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
                 leadForm.reset();
                 btn.disabled = false;
                 submitted = false;
