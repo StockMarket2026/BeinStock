@@ -38,7 +38,7 @@
 
         .en { font-family: 'Space Grotesk', sans-serif; }
 
-        /* ========== الشريط العلوي ========== */
+        /* الشريط العلوي */
         .top-bar {
             background: var(--navy);
             color: var(--white);
@@ -48,12 +48,9 @@
             font-weight: 500;
         }
 
-        .top-bar .highlight {
-            color: var(--green-light);
-            font-weight: 700;
-        }
+        .top-bar .highlight { color: var(--green-light); font-weight: 700; }
 
-        /* ========== الهيدر ========== */
+        /* الهيدر */
         .site-header {
             position: sticky;
             top: 0;
@@ -81,7 +78,7 @@
         }
 
         .logo-header img {
-            height: 44px;
+            height: 60px;
             width: auto;
             object-fit: contain;
         }
@@ -100,10 +97,6 @@
             transition: color 0.2s;
         }
 
-        .header-nav a:hover {
-            color: var(--purple);
-        }
-
         .header-nav .nav-cta {
             padding: 10px 22px;
             background: var(--navy);
@@ -114,20 +107,13 @@
             transition: all 0.3s;
         }
 
-        .header-nav .nav-cta:hover {
-            background: var(--purple);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(123, 92, 231, 0.25);
-        }
-
-        /* ========== الحاوية ========== */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 32px;
         }
 
-        /* ========== Hero ========== */
+        /* Hero */
         .hero {
             padding: 80px 0 60px;
             text-align: center;
@@ -217,10 +203,8 @@
             margin: 0 auto;
         }
 
-        /* ========== قسم الخدمات ========== */
-        .services-section {
-            padding: 60px 0 100px;
-        }
+        /* الخدمات */
+        .services-section { padding: 60px 0 100px; }
 
         .section-header {
             text-align: center;
@@ -252,7 +236,6 @@
             margin: 0 auto;
         }
 
-        /* بطاقات الخدمات */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -282,23 +265,8 @@
             transition: opacity 0.4s;
         }
 
-        .service-card.purple::before {
-            background: radial-gradient(circle, var(--purple), transparent 70%);
-        }
-
-        .service-card.green::before {
-            background: radial-gradient(circle, var(--green), transparent 70%);
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-hover);
-            box-shadow: 0 25px 50px rgba(30, 58, 95, 0.1);
-        }
-
-        .service-card:hover::before {
-            opacity: 0.3;
-        }
+        .service-card.purple::before { background: radial-gradient(circle, var(--purple), transparent 70%); }
+        .service-card.green::before { background: radial-gradient(circle, var(--green), transparent 70%); }
 
         .service-icon {
             width: 64px;
@@ -324,10 +292,7 @@
             box-shadow: 0 12px 25px rgba(34, 197, 94, 0.25);
         }
 
-        .service-icon svg {
-            width: 30px;
-            height: 30px;
-        }
+        .service-icon svg { width: 30px; height: 30px; }
 
         .service-card h3 {
             font-size: 26px;
@@ -403,33 +368,16 @@
             box-shadow: 0 8px 20px rgba(123, 92, 231, 0.25);
         }
 
-        .service-card.purple .service-cta:hover {
-            background: var(--purple-light);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(123, 92, 231, 0.4);
-        }
-
         .service-card.green .service-cta {
             background: var(--green);
             color: var(--white);
             box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
         }
 
-        .service-card.green .service-cta:hover {
-            background: var(--green-light);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
-        }
+        .service-cta svg { width: 16px; height: 16px; }
 
-        .service-cta svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* ========== قسم التواصل ========== */
-        .contact-section {
-            padding: 0 0 100px;
-        }
+        /* التواصل */
+        .contact-section { padding: 0 0 100px; }
 
         .contact-box {
             background: linear-gradient(135deg, var(--navy) 0%, #2D4A7C 100%);
@@ -484,7 +432,6 @@
             margin-bottom: 36px;
         }
 
-        /* أيقونات التواصل */
         .contact-socials {
             display: flex;
             justify-content: center;
@@ -508,13 +455,6 @@
             backdrop-filter: blur(10px);
         }
 
-        .social-contact:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
         .social-contact .ico {
             width: 40px;
             height: 40px;
@@ -525,11 +465,7 @@
             flex-shrink: 0;
         }
 
-        .social-contact .ico svg {
-            width: 20px;
-            height: 20px;
-            fill: #FFFFFF;
-        }
+        .social-contact .ico svg { width: 20px; height: 20px; fill: #FFFFFF; }
 
         .social-contact.website .ico { background: linear-gradient(135deg, #4A7CFF, #6B92FF); }
         .social-contact.instagram .ico { background: linear-gradient(135deg, #833AB4, #E4405F, #FCAF45); }
@@ -544,11 +480,7 @@
             line-height: 1.2;
         }
 
-        .social-contact .label .name {
-            font-size: 14px;
-            font-weight: 700;
-        }
-
+        .social-contact .label .name { font-size: 14px; font-weight: 700; }
         .social-contact .label .sub {
             font-size: 11px;
             color: rgba(255, 255, 255, 0.6);
@@ -556,10 +488,8 @@
             margin-top: 2px;
         }
 
-        /* ========== قسم الثقة العالمي ========== */
-        .trust-section {
-            padding: 0 0 100px;
-        }
+        /* الثقة */
+        .trust-section { padding: 0 0 100px; }
 
         .trust-box {
             background: var(--white);
@@ -593,10 +523,7 @@
             border-radius: 50%;
         }
 
-        .trust-content {
-            position: relative;
-            z-index: 1;
-        }
+        .trust-content { position: relative; z-index: 1; }
 
         .trust-icon {
             width: 80px;
@@ -617,10 +544,7 @@
             50% { transform: scale(1.05); box-shadow: 0 20px 45px rgba(123, 92, 231, 0.5); }
         }
 
-        .trust-icon svg {
-            width: 38px;
-            height: 38px;
-        }
+        .trust-icon svg { width: 38px; height: 38px; }
 
         .trust-box h2 {
             font-size: 38px;
@@ -660,17 +584,9 @@
             box-shadow: 0 15px 35px rgba(123, 92, 231, 0.3);
         }
 
-        .trust-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 45px rgba(123, 92, 231, 0.45);
-        }
+        .trust-cta svg { width: 18px; height: 18px; }
 
-        .trust-cta svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        /* ========== الفوتر ========== */
+        /* الفوتر */
         .site-footer {
             background: var(--navy);
             color: rgba(255, 255, 255, 0.75);
@@ -703,23 +619,14 @@
             margin-bottom: 20px;
         }
 
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; }
 
         .footer-col ul li a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--green-light);
         }
 
         .footer-socials {
@@ -741,12 +648,6 @@
             transition: all 0.3s;
         }
 
-        .footer-socials a:hover {
-            background: var(--purple);
-            color: var(--white);
-            transform: translateY(-4px);
-        }
-
         .footer-socials a svg { width: 18px; height: 18px; fill: currentColor; }
 
         .footer-bottom {
@@ -766,7 +667,57 @@
             font-size: 11px;
         }
 
-        /* ========== التجاوب ========== */
+        /* تأثيرات Hover للكمبيوتر */
+        @media (hover: hover) {
+            .header-nav a:hover { color: var(--purple); }
+            .header-nav .nav-cta:hover {
+                background: var(--purple);
+                transform: translateY(-2px);
+                box-shadow: 0 8px 20px rgba(123, 92, 231, 0.25);
+            }
+            .service-card:hover {
+                transform: translateY(-8px);
+                border-color: var(--border-hover);
+                box-shadow: 0 25px 50px rgba(30, 58, 95, 0.1);
+            }
+            .service-card:hover::before { opacity: 0.3; }
+            .service-card.purple .service-cta:hover {
+                background: var(--purple-light);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 30px rgba(123, 92, 231, 0.4);
+            }
+            .service-card.green .service-cta:hover {
+                background: var(--green-light);
+                transform: translateY(-3px);
+                box-shadow: 0 12px 30px rgba(34, 197, 94, 0.4);
+            }
+            .social-contact:hover {
+                transform: translateY(-5px);
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.3);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            }
+            .trust-cta:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 45px rgba(123, 92, 231, 0.45);
+            }
+            .footer-socials a:hover {
+                background: var(--purple);
+                color: var(--white);
+                transform: translateY(-4px);
+            }
+        }
+
+        /* تأثير اللمس للموبايل */
+        .nav-cta:active,
+        .service-cta:active,
+        .trust-cta:active,
+        .social-contact:active {
+            transform: scale(0.97);
+            opacity: 0.9;
+        }
+
+        /* التجاوب */
         @media (max-width: 1024px) {
             .hero h1 { font-size: 42px; }
             .section-header h2 { font-size: 34px; }
@@ -775,6 +726,7 @@
 
         @media (max-width: 768px) {
             .header-inner { padding: 14px 20px; }
+            .logo-header img { height: 46px; }
             .header-nav { gap: 16px; }
             .header-nav a:not(.nav-cta) { display: none; }
             .container { padding: 0 20px; }
@@ -820,12 +772,10 @@
 </head>
 <body>
 
-<!-- الشريط العلوي -->
 <div class="top-bar">
     🎉 انضم إلى أكثر من <span class="highlight">500 عميل</span> حققوا أهدافهم المالية معنا
 </div>
 
-<!-- الهيدر -->
 <header class="site-header">
     <div class="header-inner">
         <a href="index.html" class="logo-header">
@@ -833,14 +783,13 @@
         </a>
         <nav class="header-nav">
             <a href="index.html">الرئيسية</a>
-            <a href="#leadForm" class="nav-cta">احصل على توصية</a>
+            <a href="index.html#leadForm" class="nav-cta">احصل على توصية</a>
         </nav>
     </div>
 </header>
 
 <div class="container">
 
-    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
             <img src="logo.png" alt="BE IN STOCK" class="hero-logo">
@@ -861,7 +810,6 @@
         </div>
     </section>
 
-    <!-- الخدمات -->
     <section class="services-section">
         <div class="section-header">
             <span class="eyebrow">خدماتنا</span>
@@ -871,7 +819,6 @@
 
         <div class="services-grid">
 
-            <!-- بطاقة التوصيات -->
             <div class="service-card purple">
                 <div class="service-icon purple">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -894,7 +841,6 @@
                 </a>
             </div>
 
-            <!-- بطاقة إدارة المحافظ -->
             <div class="service-card green">
                 <div class="service-icon green">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -920,18 +866,16 @@
         </div>
     </section>
 
-    <!-- قسم التواصل -->
     <section class="contact-section">
         <div class="contact-box">
             <div class="contact-content">
                 <h2>📞 تواصل معنا</h2>
                 <p>
-                    نحن هنا لمساعدتك في أي استفسارات أو مخاوف قد تكون لديك. يلتزم فريقنا بتوفير أفضل تجربة خدمة للعملاء. اختر الطريقة الأنسب للتواصل معنا وتطلع إلى سماعك!
+                    نحن هنا لمساعدتك في أي استفسارات أو مخاوف قد تكون لديك. يلتزم فريقنا بتوفير أفضل تجربة خدمة للعملاء. اختر الطريقة الأنسب للتواصل معنا ونتطلع إلى سماعك!
                 </p>
 
                 <div class="contact-socials">
 
-                    <!-- الموقع الرسمي -->
                     <a href="https://be-instock.com/" target="_blank" rel="noopener" class="social-contact website">
                         <div class="ico">
                             <svg viewBox="0 0 24 24">
@@ -944,7 +888,6 @@
                         </div>
                     </a>
 
-                    <!-- Instagram -->
                     <a href="https://www.instagram.com/be_instock" target="_blank" rel="noopener" class="social-contact instagram">
                         <div class="ico">
                             <svg viewBox="0 0 24 24">
@@ -957,7 +900,6 @@
                         </div>
                     </a>
 
-                    <!-- TikTok -->
                     <a href="https://www.tiktok.com/@be_instock" target="_blank" rel="noopener" class="social-contact tiktok">
                         <div class="ico">
                             <svg viewBox="0 0 24 24">
@@ -970,7 +912,6 @@
                         </div>
                     </a>
 
-                    <!-- X -->
                     <a href="https://x.com/be_instock" target="_blank" rel="noopener" class="social-contact x-twitter">
                         <div class="ico">
                             <svg viewBox="0 0 24 24">
@@ -983,7 +924,6 @@
                         </div>
                     </a>
 
-                    <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/company/be-instock/" target="_blank" rel="noopener" class="social-contact linkedin">
                         <div class="ico">
                             <svg viewBox="0 0 24 24">
@@ -1001,7 +941,6 @@
         </div>
     </section>
 
-    <!-- قسم الثقة العالمي -->
     <section class="trust-section">
         <div class="trust-box">
             <div class="trust-content">
@@ -1027,7 +966,6 @@
 
 </div>
 
-<!-- الفوتر -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
