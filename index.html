@@ -1450,7 +1450,7 @@
         submitBtn.disabled = true;
         showMsg('⏳ جاري إرسال بياناتك...', 'loading');
 
-        var formData = new FormData();
+                var formData = new URLSearchParams();
         formData.append('name', name);
         formData.append('phone', phone);
         formData.append('market', market);
@@ -1459,7 +1459,8 @@
         fetch(SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
-            body: formData
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: formData.toString()
         })
         .then(function() {
             showMsg('✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.', 'success');
