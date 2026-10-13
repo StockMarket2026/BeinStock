@@ -1325,7 +1325,7 @@
 
 <script>
     // ============================================
-    // 1. عدّاد الأرقام المتحرك
+    // 1. عدّاد الأرقام
     // ============================================
     function animateNumber(el) {
         var target = parseInt(el.getAttribute('data-target'));
@@ -1362,7 +1362,7 @@
     });
 
     // ============================================
-    // 2. الفورم + التحقق من الكود
+    // 2. الفورم
     // ============================================
     var leadForm = document.getElementById('leadFormEl');
     var msgDiv = document.getElementById('msg');
@@ -1370,8 +1370,8 @@
     var validCodes = [];
     var codesLoaded = false;
 
-    // ⚠️ رابط Apps Script - استبدله بالرابط الحالي بتاعك
-    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyDxuhvoA0PftDAmgXx-WhG8F3oUP4MCp5XbkcAVCoLGb95q4LYPR6LrnmqDPdUoSvaXw/exec';
+    // ⚠️ استبدل الرابط بالرابط الحالي بتاعك
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyafYYVijTbNQbBsyrgrUVB2naIL5Z3Gm_Wfht_tSJyojed_WpK9Sww6jV83jiu8jY_vg/exec';
 
     function showMsg(text, type) {
         msgDiv.style.display = 'block';
@@ -1392,7 +1392,7 @@
         }
     }
 
-    // ✅ تحميل الأكواد من Apps Script
+    // تحميل الأكواد
     function loadValidCodes() {
         fetch(SCRIPT_URL + '?action=getCodes')
             .then(function(res) {
@@ -1417,9 +1417,7 @@
 
     loadValidCodes();
 
-    // ============================================
-    // 3. إرسال الفورم
-    // ============================================
+    // إرسال الفورم
     leadForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -1428,13 +1426,11 @@
         var market = leadForm.querySelector('select[name="market"]').value;
         var referral = document.getElementById('referralInput').value.trim();
 
-        // التحقق من الحقول
         if (!name) { showMsg('❌ من فضلك أدخل الاسم', 'error'); return; }
         if (!phone) { showMsg('❌ من فضلك أدخل رقم الجوال', 'error'); return; }
         if (!market) { showMsg('❌ من فضلك اختر السوق', 'error'); return; }
         if (!referral) { showMsg('❌ كود الدعوة إجباري', 'error'); return; }
 
-        // التحقق من الأكواد
         if (!codesLoaded) {
             showMsg('⏳ جاري تحميل الأكواد، حاول ثانية أخرى', 'loading');
             loadValidCodes();
@@ -1446,21 +1442,20 @@
             return;
         }
 
-        // ✅ الكود صحيح - نرسل البيانات
+        // ✅ إرسال البيانات بـ GET
         submitBtn.disabled = true;
         showMsg('⏳ جاري إرسال بياناتك...', 'loading');
 
-                        var formData = new URLSearchParams();
-        formData.append('name', name);
-        formData.append('phone', phone);
-        formData.append('market', market);
-        formData.append('referral', referral);
+        var sendUrl = SCRIPT_URL 
+            + '?action=addLead'
+            + '&name=' + encodeURIComponent(name)
+            + '&phone=' + encodeURIComponent(phone)
+            + '&market=' + encodeURIComponent(market)
+            + '&referral=' + encodeURIComponent(referral);
 
-        fetch(SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: formData.toString()
+        fetch(sendUrl, {
+            method: 'GET',
+            mode: 'no-cors'
         })
         .then(function() {
             showMsg('✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.', 'success');
